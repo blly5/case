@@ -1,0 +1,23 @@
+{
+  "name": "course",
+  "version": "1.0.0",
+  "description": "🖌🖌",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L1Yuu/course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/L1Yuu/course/issues"
+  },
+  "homepage": "https://github.com/L1Yuu/course#readme",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "webpack": "^4.30.0"
+  }
+}
