@@ -11,7 +11,7 @@ let BL_Err = (str) => {
 };
 let app = express_1.default();
 //列表查询
-app.get('/', list_1.seachList);
+app.get('/*', list_1.seachList);
 app.get('/add', (req, res) => {
 });
 app.listen(3000);

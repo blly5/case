@@ -1,31 +1,11 @@
 
-
-import mongoose from 'mongoose';
-import mongoConfig from '../config/db_config';
-
-mongoose.connect(mongoConfig.url, {useNewUrlParser: true});
-
-const con = mongoose.connection;
-
-con.on('error',() => {
-    console.log(`链接失败`);
-});
-
-con.once('open', () => {
-    console.log('链接成功');
-});
-
-const schema = new mongoose.Schema({
-    name: String
-});
-
-let goods = mongoose.model('mongoTest', schema);
+import { findByList, addAlbumInfo } from '../modles/base';
 
 export const seachList = async (req:any, res:any) => {
-    
-    const seach = await goods.find({});
+        let as = await findByList();
 
-    res.send(seach);
-
+        let add = await addAlbumInfo(req.query.add);
+        
+        res.send(as);    
 };
 

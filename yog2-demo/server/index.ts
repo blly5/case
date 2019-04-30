@@ -15,7 +15,7 @@ let BL_Err = (str:any) => {
 let app = express();
 
 //列表查询
-app.get('/', seachList)
+app.get('/*', seachList)
 
 app.get('/add', (req:any, res:any)=>{
 
