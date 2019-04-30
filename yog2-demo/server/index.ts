@@ -1,20 +1,24 @@
 import  express from 'express';
-import { db_config } from './config/db_config';
-import * as mongoClient from 'mongodb';
+import db_config from './config/db_config';
+import moment from 'moment';
+import * as mongoose from 'mongoose';
+import chalk from 'chalk';
 
-mongoClient.connect(db_config.url,{ useNewUrlParser: true }, (err, db) => {
+import { seachList } from './controllers/list';
 
-});
 
-var app = express()
 
-app.get('/', function (req, res) {
-    res.send(db_config.url);
-    
-  })
+let BL_Err = (str:any) => {
+  console.log( chalk.red(str) + chalk.red('!') );
+};
 
-app.get('/add', (req, res)=>{
-    res.send('Hello World!2')
+let app = express();
+
+//列表查询
+app.get('/', seachList)
+
+app.get('/add', (req:any, res:any)=>{
+
 });
 
 app.listen(3000)

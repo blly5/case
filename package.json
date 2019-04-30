@@ -20,11 +20,18 @@
   },
   "homepage": "https://github.com/L1Yuu/course#readme",
   "dependencies": {
+    "@types/color": "^3.0.0",
+    "@types/mongodb": "^3.1.25",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "mongodb": "^3.2.3",
+    "mongoose": "^5.5.4",
     "typescript": "^3.4.5",
     "uuid": "^3.3.2",
     "webpack": "^4.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.8"
   }
 }
