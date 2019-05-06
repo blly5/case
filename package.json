@@ -4,8 +4,8 @@
   "description": "🖌🖌",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run build-ts && nodemon yog2-demo/server-dist/index.js",
+    "dev": "npm run build-ts && npm run start",
+    "start": "nodemon node-mongodb-demo/server-dist/index.js",
     "build-ts": "tsc",
     "watch-ts": "tsc -w"
   },
@@ -27,6 +27,7 @@
     "moment": "^2.24.0",
     "mongodb": "^3.2.3",
     "mongoose": "^5.5.4",
+    "node-notifier": "^5.4.0",
     "typescript": "^3.4.5",
     "uuid": "^3.3.2",
     "webpack": "^4.30.0"

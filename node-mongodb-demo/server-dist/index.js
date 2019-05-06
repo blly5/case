@@ -4,14 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const chalk_1 = __importDefault(require("chalk"));
-const list_1 = require("./controllers/list");
-let BL_Err = (str) => {
-    console.log(chalk_1.default.red(str) + chalk_1.default.red('!'));
-};
+const selectUsers_1 = require("./controllers/selectUsers");
+const notifier = require('node-notifier');
 let app = express_1.default();
+/**
+ * @param {String} str;
+ **/
+let selectUserInfo = (req, res, next) => {
+    console.log(`done`);
+    next();
+};
+app.use('/api', selectUsers_1.selectUsers);
 //列表查询
-app.get('/*', list_1.seachList);
 app.get('/add', (req, res) => {
 });
 app.listen(3000);

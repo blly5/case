@@ -1,19 +1,19 @@
 
 import mongoose from 'mongoose';
 import mongoConfig from '../config/db_config';
+import chalk from 'chalk';
 
 mongoose.connect(mongoConfig.url, {useNewUrlParser: true});
 
 const con = mongoose.connection;
 
 con.on('error',() => {
-    console.log(`链接失败`);
+    console.log(chalk.red('链接失败'));
 });
 
 con.once('open', () => {
-    console.log('链接成功');
+    console.log(chalk.blue('链接成功'));
 });
-
 
 const schemaList = mongoose.model('activitys', new mongoose.Schema({
     name: String,
