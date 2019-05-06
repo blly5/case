@@ -8,12 +8,15 @@ const notifier = require('node-notifier');
 
 let app = express();
 
-/**
- * @param {String} str;
- **/
-
-
 app.use('/api', selectUsers );
 
 
 app.listen(3000);
+
+
+function insert <String> (arg:number ):number {
+  return arg;
+}
+
+
+

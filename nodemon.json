@@ -1,3 +1,4 @@
 {
-    "watch":["node-mongodb-demo"]
+    "watch":["node-mongodb-demo"],
+    "verbose":true
 }

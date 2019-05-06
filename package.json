@@ -21,8 +21,10 @@
   "homepage": "https://github.com/L1Yuu/course#readme",
   "dependencies": {
     "@types/color": "^3.0.0",
+    "@types/graphql": "^14.2.0",
     "@types/mongodb": "^3.1.25",
     "express": "^4.16.4",
+    "graphql": "^14.2.1",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "mongodb": "^3.2.3",

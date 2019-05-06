@@ -3,13 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const base_1 = require("../modles/base");
 const express_1 = __importDefault(require("express"));
+const base_1 = require("../modles/base");
 const router = express_1.default.Router();
 exports.selectUsers = router;
 /**
  * @param { id:Number }
- *
  */
 router.get('/getByUserList', async (req, res, next) => {
     let _userId = req.query.id;
@@ -22,7 +21,16 @@ router.get('/getByUserList', async (req, res, next) => {
     }
     next();
 });
+/**
+ * @param {id:Number, name:String}
+ */
 router.get('/emitByUserInfo', async (req, res, next) => {
     let { query = {} } = req;
     let _userId = query.id;
+    let _name = query.name;
+    if (_userId && _name) {
+    }
+    else {
+        res.send();
+    }
 });
