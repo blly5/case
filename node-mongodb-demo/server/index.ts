@@ -12,16 +12,8 @@ let app = express();
  * @param {String} str;
  **/
 
-let selectUserInfo = (req:any, res:any, next:any) => {
-  console.log(`done`);
-  next();
-};
 
 app.use('/api', selectUsers );
 
-//列表查询
 
-app.get('/add', (req:any, res:any)=>{
-
-});
 app.listen(3000);

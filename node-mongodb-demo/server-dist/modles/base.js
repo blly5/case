@@ -14,12 +14,12 @@ con.on('error', () => {
 con.once('open', () => {
     console.log(chalk_1.default.blue('链接成功'));
 });
+//////////////////
 const schemaList = mongoose_1.default.model('activitys', new mongoose_1.default.Schema({
-    name: String,
     hidden: String,
 }));
-async function findByList() {
-    let res = await schemaList.find({});
+async function findByList(id) {
+    let res = await schemaList.find({ 'name': '' });
     return res;
 }
 exports.findByList = findByList;

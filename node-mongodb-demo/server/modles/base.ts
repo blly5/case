@@ -15,14 +15,17 @@ con.once('open', () => {
     console.log(chalk.blue('链接成功'));
 });
 
+
+//////////////////
+
+
 const schemaList = mongoose.model('activitys', new mongoose.Schema({
-    name: String,
     hidden: String,
+    
     }));
 
-
-export async function findByList() {
-        let res = await schemaList.find({});
+export async function findByList( id:number ) {
+        let res = await schemaList.find({ 'name':'' });
         return res;
     }
 

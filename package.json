@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run build-ts && npm run start",
-    "start": "nodemon node-mongodb-demo/server-dist/index.js",
+    "start": "npm run watch-ts & nodemon ./node-mongodb-demo/server-dist/index.js",
     "build-ts": "tsc",
     "watch-ts": "tsc -w"
   },
