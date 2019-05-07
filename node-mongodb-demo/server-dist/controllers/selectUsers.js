@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const base_1 = require("../modles/base");
+const album_1 = require("../modles/album");
 const router = express_1.default.Router();
 exports.selectUsers = router;
 /**
@@ -13,7 +13,7 @@ exports.selectUsers = router;
 router.get('/getByUserList', async (req, res, next) => {
     let _userId = req.query.id;
     if (_userId) {
-        let data = await base_1.findByList(_userId);
+        let data = await album_1.findByList(_userId);
         if (!data) {
             res.send({ msg: '未查询到' });
         }
@@ -26,7 +26,7 @@ router.get('/getByUserList', async (req, res, next) => {
 });
 router.get('/emitByUserInfo', async (req, res, next) => {
     let { query = {} } = req;
-    let data = await base_1.addAlbumInfo(query.name, query.team, query.age || 0, query.exstr || '暂无');
+    let data = await album_1.addAlbumInfo(query.name, query.team, query.age || 0, query.exstr || '暂无');
     console.log(data);
     res.send(data);
 });

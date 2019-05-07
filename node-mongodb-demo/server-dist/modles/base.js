@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const db_config_1 = __importDefault(require("../config/db_config"));
 const chalk_1 = __importDefault(require("chalk"));
-const moment_1 = __importDefault(require("moment"));
-const uuid = require('uuid');
 mongoose_1.default.connect(db_config_1.default.url, { useNewUrlParser: true });
 const con = mongoose_1.default.connection;
 con.on('error', () => {
@@ -16,9 +14,10 @@ con.on('error', () => {
 con.once('open', () => {
     console.log(chalk_1.default.blue('链接成功'));
 });
-;
+////////////////////////////////////
+//团队和成员分散
 //创建schema 需要转换成model document需要是复数的形式
-//子文档
+//子文档 test
 const childSchema = new mongoose_1.default.Schema({
     setdate: Date
 });
@@ -32,32 +31,5 @@ const schema = new mongoose_1.default.Schema({
     exstr: String,
     child: childSchema
 });
-//团队和成员分散
 //由schema创建model实例
-const albumModel = mongoose_1.default.model('activitys', schema);
-async function findByList(id) {
-    return albumModel.find({ 'uid': id }, 'name team age uid -_id', function (err, res) {
-        return res;
-    });
-}
-exports.findByList = findByList;
-;
-async function addAlbumInfo(name, team, age, exstr) {
-    let data = {
-        name: name,
-        team: team,
-        age: age,
-        update: moment_1.default().format("YYYYMMDDHHmmss"),
-        uid: uuid.v1(),
-        exstr: exstr
-    };
-    let result = albumModel.create(data);
-    return result.then(a => {
-        return a;
-    });
-}
-exports.addAlbumInfo = addAlbumInfo;
-;
-async function setAlbumInfo(id, team, age, exstr) {
-}
-exports.setAlbumInfo = setAlbumInfo;
+exports.albumModel = mongoose_1.default.model('activitys', schema);
