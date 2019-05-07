@@ -7,6 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const db_config_1 = __importDefault(require("../config/db_config"));
 const chalk_1 = __importDefault(require("chalk"));
 const moment_1 = __importDefault(require("moment"));
+const uuid = require('uuid');
 mongoose_1.default.connect(db_config_1.default.url, { useNewUrlParser: true });
 const con = mongoose_1.default.connection;
 con.on('error', () => {
@@ -23,27 +24,36 @@ const schema = new mongoose_1.default.Schema({
     team: String,
     age: Number,
     update: Date,
+    uid: String,
     exstr: String
 });
+//团队和成员分散
 //由schema创建model实例
 const albumModel = mongoose_1.default.model('activitys', schema);
 async function findByList(id) {
-    let query = new albumModel({ 'name': '123' });
-    query.save(function (err, res) {
+    return albumModel.find({ 'uid': id }, 'name team age uid').lean().exec((err, res) => {
+        return res;
     });
 }
 exports.findByList = findByList;
+;
 async function addAlbumInfo(name, team, age, exstr) {
     let data = {
         name: name,
         team: team,
         age: age,
         update: moment_1.default().format("YYYYMMDDHHmmss"),
+        uid: uuid.v1(),
         exstr: exstr
     };
-    let w = albumModel.create(data, function (err, res) {
+    return albumModel.create(data, function (err, res) {
         if (err)
             return { msg: '添加失败' };
+        return res;
     });
 }
 exports.addAlbumInfo = addAlbumInfo;
+;
+async function setAlbumInfo(id, team, age, exstr) {
+}
+exports.setAlbumInfo = setAlbumInfo;

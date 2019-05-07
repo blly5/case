@@ -14,7 +14,7 @@ const router = express.Router();
 router.get('/getByUserList', async (req:any, res:any, next) => {
         let _userId = req.query.id;
     
-        if( Number(_userId) ) {
+        if( _userId ) {
             let data = await findByList(_userId);
             return res.send( data );
         } 

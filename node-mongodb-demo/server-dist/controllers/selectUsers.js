@@ -12,7 +12,7 @@ exports.selectUsers = router;
  */
 router.get('/getByUserList', async (req, res, next) => {
     let _userId = req.query.id;
-    if (Number(_userId)) {
+    if (_userId) {
         let data = await base_1.findByList(_userId);
         return res.send(data);
     }
