@@ -35,5 +35,7 @@ async function setAlbumInfo(id, team, age, exstr) {
         age: age,
         exstr: exstr
     };
+    let data = await base_1.albumModel.update({ 'id': params.id }, { team: params.team, age: params.age, exstr: params.exstr });
+    return data;
 }
 exports.setAlbumInfo = setAlbumInfo;

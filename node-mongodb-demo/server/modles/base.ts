@@ -40,7 +40,5 @@ const schema = new mongoose.Schema({
 });
 
 
-
-
 //由schema创建model实例
 export const albumModel = mongoose.model('activitys', schema );

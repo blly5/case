@@ -12,6 +12,9 @@ const router = express.Router();
  * @param { id:Number }
  */
 
+
+
+
 router.get('/getByUserList', async (req:any, res:any, next) => {
         let _userId = req.query.id;
     
@@ -29,13 +32,15 @@ router.get('/getByUserList', async (req:any, res:any, next) => {
 });
 
 
-router.get('/emitByUserInfo', async (req:any, res:any, next) => {
+router.get('/addByUserInfo', async (req:any, res:any, next) => {
         let { query = {} } = req;
-
             let data = await addAlbumInfo(query.name, query.team, query.age||0, query.exstr||'暂无');
             console.log(data);
             res.send( data );
-       
+})
+
+router.get('/emitByUserInfo', async (req:any, res:any, next) => {
+        
 })
 
 export { router as selectUsers };

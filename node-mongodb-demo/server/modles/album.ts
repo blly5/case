@@ -25,9 +25,7 @@ export async function addAlbumInfo(name:String, team:String, age:number, exstr:S
         uid:uuid.v1(),
         exstr: exstr
     };
-    
     let data = await albumModel.create( params );
-
     return data;
 };
 
@@ -38,4 +36,8 @@ export async function setAlbumInfo(id:number, team:String, age:number, exstr:Str
         age: age,
         exstr: exstr
     };
+
+    let data = await albumModel.update( { 'id':params.id }, { team:params.team, age:params.age, exstr:params.exstr } );
+    return data;
+
 }
