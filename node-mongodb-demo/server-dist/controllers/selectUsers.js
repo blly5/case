@@ -14,7 +14,10 @@ router.get('/getByUserList', async (req, res, next) => {
     let _userId = req.query.id;
     if (_userId) {
         let data = await base_1.findByList(_userId);
-        return res.send(data);
+        if (!data) {
+            res.send({ msg: '未查询到' });
+        }
+        res.send(data);
     }
     else {
         res.send('<h5>the params is undefined</h5>');

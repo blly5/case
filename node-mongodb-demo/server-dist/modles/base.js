@@ -18,6 +18,10 @@ con.once('open', () => {
 });
 ;
 //创建schema 需要转换成model document需要是复数的形式
+//子文档
+const childSchema = new mongoose_1.default.Schema({
+    setdate: Date
+});
 //基础的数据模型
 const schema = new mongoose_1.default.Schema({
     name: String,
@@ -25,13 +29,14 @@ const schema = new mongoose_1.default.Schema({
     age: Number,
     update: Date,
     uid: String,
-    exstr: String
+    exstr: String,
+    child: childSchema
 });
 //团队和成员分散
 //由schema创建model实例
 const albumModel = mongoose_1.default.model('activitys', schema);
 async function findByList(id) {
-    return albumModel.find({ 'uid': id }, 'name team age uid').lean().exec((err, res) => {
+    return albumModel.find({ 'uid': id }, 'name team age uid -_id', function (err, res) {
         return res;
     });
 }

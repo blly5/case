@@ -31,6 +31,13 @@ interface addAlbumInfo {
 
 //创建schema 需要转换成model document需要是复数的形式
 
+
+
+//子文档
+const childSchema = new mongoose.Schema({
+    setdate: Date
+})
+
 //基础的数据模型
 const schema = new mongoose.Schema({
     name: String,
@@ -38,8 +45,8 @@ const schema = new mongoose.Schema({
     age: Number,
     update: Date,
     uid: String,
-    exstr: String
-
+    exstr: String,
+    child: childSchema
 });
 
 
@@ -50,9 +57,9 @@ const albumModel = mongoose.model('activitys', schema );
 
 
 export async function findByList( id:number ) {
-        return albumModel.find({ 'uid':id } ,'name team age uid').lean().exec((err:any, res:any) => {
+        return albumModel.find({ 'uid':id } ,'name team age uid -_id', function (err:any, res:any) {
             return res;
-        });
+        })
     };
 
 export async function addAlbumInfo(name:String, team:String, age:number, exstr:String) {
