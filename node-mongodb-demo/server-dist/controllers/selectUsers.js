@@ -26,14 +26,7 @@ router.get('/getByUserList', async (req, res, next) => {
 });
 router.get('/emitByUserInfo', async (req, res, next) => {
     let { query = {} } = req;
-    if (query.name && query.team) {
-        let data = await base_1.addAlbumInfo(query.name, query.team, query.age || 0, query.exstr || '暂无');
-        console.log(data);
-        res.send(data);
-    }
-    else {
-        res.send({
-            'msg': 'error'
-        });
-    }
+    let data = await base_1.addAlbumInfo(query.name, query.team, query.age || 0, query.exstr || '暂无');
+    console.log(data);
+    res.send(data);
 });

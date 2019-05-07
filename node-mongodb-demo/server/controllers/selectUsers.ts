@@ -30,15 +30,11 @@ router.get('/getByUserList', async (req:any, res:any, next) => {
 
 router.get('/emitByUserInfo', async (req:any, res:any, next) => {
         let { query = {} } = req;
-        if( query.name && query.team ) {
+        
             let data = await addAlbumInfo(query.name, query.team, query.age||0, query.exstr||'暂无');
             console.log(data);
             res.send( data );
-        } else {
-            res.send({
-                'msg' : 'error'
-            });
-        }
+       
 })
 
 export { router as selectUsers };

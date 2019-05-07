@@ -51,10 +51,9 @@ async function addAlbumInfo(name, team, age, exstr) {
         uid: uuid.v1(),
         exstr: exstr
     };
-    return albumModel.create(data, function (err, res) {
-        if (err)
-            return { msg: '添加失败' };
-        return res;
+    let result = albumModel.create(data);
+    return result.then(a => {
+        return a;
     });
 }
 exports.addAlbumInfo = addAlbumInfo;

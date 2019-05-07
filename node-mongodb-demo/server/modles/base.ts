@@ -72,12 +72,15 @@ export async function addAlbumInfo(name:String, team:String, age:number, exstr:S
             exstr: exstr
         };
         
-        return albumModel.create(data, function(err:any, res:any) {
-            if (err) return { msg:'添加失败' } ;
-            return res;
+        let result = albumModel.create( data );
+        return result.then(a => {
+            return a;
         })
     };
 
 export async function setAlbumInfo(id:number, team:String, age:number, exstr:String) {
     
+
+
+
 }
