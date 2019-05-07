@@ -9,6 +9,3 @@ const notifier = require('node-notifier');
 let app = express_1.default();
 app.use('/api', selectUsers_1.selectUsers);
 app.listen(3000);
-function insert(arg) {
-    return arg;
-}

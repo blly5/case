@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const db_config_1 = __importDefault(require("../config/db_config"));
 const chalk_1 = __importDefault(require("chalk"));
+const moment_1 = __importDefault(require("moment"));
 mongoose_1.default.connect(db_config_1.default.url, { useNewUrlParser: true });
 const con = mongoose_1.default.connection;
 con.on('error', () => {
@@ -21,6 +22,7 @@ const schema = new mongoose_1.default.Schema({
     name: String,
     team: String,
     age: Number,
+    update: Date,
     exstr: String
 });
 //由schema创建model实例
@@ -36,6 +38,7 @@ async function addAlbumInfo(name, team, age, exstr) {
         name: name,
         team: team,
         age: age,
+        update: moment_1.default().format("YYYYMMDDHHmmss"),
         exstr: exstr
     };
     let w = albumModel.create(data, function (err, res) {

@@ -2,6 +2,8 @@
 import mongoose from 'mongoose';
 import mongoConfig from '../config/db_config';
 import chalk from 'chalk';
+import moment from 'moment';
+
 
 mongoose.connect(mongoConfig.url, {useNewUrlParser: true});
 
@@ -27,8 +29,6 @@ interface addAlbumInfo {
     name: String
 }
 
-
-
 //创建schema 需要转换成model document需要是复数的形式
 
 //基础的数据模型
@@ -36,6 +36,7 @@ const schema = new mongoose.Schema({
     name: String,
     team: String,
     age: Number,
+    update: Date,
     exstr: String
 
 });
@@ -59,6 +60,7 @@ export async function addAlbumInfo(name:String, team:String, age:number, exstr:S
             name: name,
             team: team,
             age: age,
+            update: moment().format("YYYYMMDDHHmmss"),
             exstr: exstr
         };
         
