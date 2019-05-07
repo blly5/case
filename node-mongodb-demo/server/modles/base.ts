@@ -16,17 +16,26 @@ con.once('open', () => {
 });
 
 
-//////////////////
+////////////////////////////////////
 
 
-const schemaList = mongoose.model('activitys', new mongoose.Schema({
-    hidden: String,
-    
-    }));
+//创建schema 需要转换成model document需要是复数的形式
+
+const schema = new mongoose.Schema({
+    name: String,
+},{  _id: false })
+
+const schemaList = mongoose.model('activitys', schema );
 
 export async function findByList( id:number ) {
-        let res = await schemaList.find({ 'name':'' });
-        return res;
+        try {
+            let res = await schemaList.find();
+            return res;
+        }
+        catch(e) {
+            console.log(chalk.red(e));
+            return { msg: 'error' };            
+        }
     }
 
 export async function addAlbumInfo(val:any) {

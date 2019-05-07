@@ -14,13 +14,21 @@ con.on('error', () => {
 con.once('open', () => {
     console.log(chalk_1.default.blue('链接成功'));
 });
-//////////////////
-const schemaList = mongoose_1.default.model('activitys', new mongoose_1.default.Schema({
-    hidden: String,
-}));
+////////////////////////////////////
+//创建schema 需要转换成model document需要是复数的形式
+const schema = new mongoose_1.default.Schema({
+    name: String,
+}, { _id: false });
+const schemaList = mongoose_1.default.model('activitys', schema);
 async function findByList(id) {
-    let res = await schemaList.find({ 'name': '' });
-    return res;
+    try {
+        let res = await schemaList.find();
+        return res;
+    }
+    catch (e) {
+        console.log(chalk_1.default.red(e));
+        return { msg: 'error' };
+    }
 }
 exports.findByList = findByList;
 async function addAlbumInfo(val) {
