@@ -10,7 +10,6 @@ let app = express();
 
 app.use('/api', selectUsers );
 
-
 app.listen(3000);
 
 

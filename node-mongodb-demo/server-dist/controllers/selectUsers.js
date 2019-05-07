@@ -21,16 +21,16 @@ router.get('/getByUserList', async (req, res, next) => {
     }
     next();
 });
-/**
- * @param {id:Number, name:String}
- */
 router.get('/emitByUserInfo', async (req, res, next) => {
     let { query = {} } = req;
-    let _userId = query.id;
-    let _name = query.name;
-    if (_userId && _name) {
+    if (query.name && query.team) {
+        let data = await base_1.addAlbumInfo(query.name, query.team, query.age || 0, query.exstr || '暂无', function (data) { res.send(data); });
+        console.log(data);
+        res.send(data);
     }
     else {
-        res.send();
+        res.send({
+            'msg': 'error'
+        });
     }
 });

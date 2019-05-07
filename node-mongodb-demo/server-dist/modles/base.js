@@ -14,25 +14,33 @@ con.on('error', () => {
 con.once('open', () => {
     console.log(chalk_1.default.blue('链接成功'));
 });
-////////////////////////////////////
+;
 //创建schema 需要转换成model document需要是复数的形式
+//基础的数据模型
 const schema = new mongoose_1.default.Schema({
     name: String,
-}, { _id: false });
-const schemaList = mongoose_1.default.model('activitys', schema);
+    team: String,
+    age: Number,
+    exstr: String
+});
+//由schema创建model实例
+const albumModel = mongoose_1.default.model('activitys', schema);
 async function findByList(id) {
-    try {
-        let res = await schemaList.find();
-        return res;
-    }
-    catch (e) {
-        console.log(chalk_1.default.red(e));
-        return { msg: 'error' };
-    }
+    let query = new albumModel({ 'name': '123' });
+    query.save(function (err, res) {
+    });
 }
 exports.findByList = findByList;
-async function addAlbumInfo(val) {
-    let res = await schemaList.insertMany([{ 'name': val }]);
-    return res;
+async function addAlbumInfo(name, team, age, exstr) {
+    let data = {
+        name: name,
+        team: team,
+        age: age,
+        exstr: exstr
+    };
+    let w = albumModel.create(data, function (err, res) {
+        if (err)
+            return { msg: '添加失败' };
+    });
 }
 exports.addAlbumInfo = addAlbumInfo;

@@ -15,7 +15,7 @@ router.get('/getByUserList', async (req:any, res:any, next) => {
         let _userId = req.query.id;
     
         if( Number(_userId) ) {
-            let data = await findByList( _userId );
+            let data = await findByList(_userId);
             return res.send( data );
         } 
         else {
@@ -25,21 +25,16 @@ router.get('/getByUserList', async (req:any, res:any, next) => {
 });
 
 
-/**
- * @param {id:Number, name:String}
- */
-
 router.get('/emitByUserInfo', async (req:any, res:any, next) => {
         let { query = {} } = req;
-        
-        let _userId = query.id;
-        let _name = query.name;
-
-        if(_userId&&_name) {
-
-        }
-        else {
-            res.send();
+        if( query.name && query.team ) {
+            let data = await addAlbumInfo(query.name, query.team, query.age||0, query.exstr||'暂无' ,function( data:any ) { res.send(data); });
+            console.log(data);
+            res.send( data );
+        } else {
+            res.send({
+                'msg' : 'error'
+            });
         }
 })
 

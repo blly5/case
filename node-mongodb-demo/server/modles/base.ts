@@ -19,28 +19,53 @@ con.once('open', () => {
 ////////////////////////////////////
 
 
+interface findByList {
+    id: Number
+};
+
+interface addAlbumInfo {
+    name: String
+}
+
+
+
 //创建schema 需要转换成model document需要是复数的形式
 
+//基础的数据模型
 const schema = new mongoose.Schema({
     name: String,
-},{  _id: false })
+    team: String,
+    age: Number,
+    exstr: String
 
-const schemaList = mongoose.model('activitys', schema );
+});
+
+//由schema创建model实例
+const albumModel = mongoose.model('activitys', schema );
+
 
 export async function findByList( id:number ) {
-        try {
-            let res = await schemaList.find();
-            return res;
-        }
-        catch(e) {
-            console.log(chalk.red(e));
-            return { msg: 'error' };            
-        }
+        let query = new albumModel({'name':'123'});
+        query.save(function(err, res) {
+           
+        });
+
     }
 
-export async function addAlbumInfo(val:any) {
-        let  res = await schemaList.insertMany([{'name':val}]);
-        return res;
+
+export async function addAlbumInfo(name:String, team:String, age:number, exstr:String) {
+
+        let data = {
+            name: name,
+            team: team,
+            age: age,
+            exstr: exstr
+        };
+        
+        let w = albumModel.create(data, function(err:any, res:any) {
+            if (err) return { msg:'添加失败' } ;
+        })
+
     }
 
 
