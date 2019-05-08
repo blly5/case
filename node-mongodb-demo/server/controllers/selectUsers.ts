@@ -13,8 +13,6 @@ const router = express.Router();
  */
 
 
-
-
 router.get('/getByUserList', async (req:any, res:any, next) => {
         let _userId = req.query.id;
     
