@@ -10,7 +10,7 @@ function func1( { a = 1, b = 2 } ){
 func1( {} );
 // 1 2
 
-func1();
+// func1();
 // TypeError: Cannot destructure property 'a' of 'undefined' or 'null'.
 // 调用时没用使用函数作为参数,只有调用时使用函数才能使 变量 'a' 和 'b' 声明变量;
 
@@ -35,9 +35,5 @@ function func3 ({a = 1, b = 2} = {} ) {
 //函数默认值
 function func4 ( {} = {a : 1, b : 2} ) {
     console.log(a ,b);
-}
-
-
-
-
+};
 

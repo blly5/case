@@ -7,7 +7,8 @@
     "dev": "npm run build-ts && npm run start",
     "start": "npm run watch-ts & nodemon ./node-mongodb-demo/server-dist/index.js",
     "build-ts": "tsc",
-    "watch-ts": "tsc -w"
+    "watch-ts": "tsc -w",
+    "ws"      : "node ./server/index.js"
   },
   "repository": {
     "type": "git",

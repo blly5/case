@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Module</title>
+
+    <!-- 引入标签 type="module" 不支持默认路径 -->
     <script type="module">
-    import { test } from './index.js';
-    console.log( test );
+        import append from './index.js';
+        append();
     </script>
+    
 </head>
 <body>
     <div></div>
