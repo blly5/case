@@ -24,7 +24,6 @@ func2( { a:'aaa', b:'bbb' } );
 
 // aaa bbb
 
-
 // 【 Test 】
 
 //解构赋值默认值

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Performance</title>
+
+</head>
+<body>
+
+    <b>ReLoad</b>
+
+    <script type="module">
+        import performances from './index.js';
+        const pm = new performances();
+        pm.show();
+        document.querySelector('b').addEventListener('click',pm.reload());
+    </script>
+</body>
+</html>
