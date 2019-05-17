@@ -6,11 +6,11 @@ export default class {
     apendEl( k = '', v = '') {
         let el = document.createElement('li');
         el.append( `${ k } : ${ v }` );
-        document.querySelector('body').appendChild( el );
+        document.querySelector('ul').appendChild( el );
     };
 
     show() {
-        document.querySelectorAll('li').remove();
+        document.querySelector('ul').innerHTML = '';
         for(let pms in this.performance) {
             if( typeof( this.performance[pms] ) === 'object' ) {
                 this.apendEl(pms);
@@ -27,5 +27,11 @@ export default class {
     }
     reload() {
         this.show();
+    }
+    onLine() {
+        requestAnimationFrame(()=>{
+            this.show();
+            this.onLine();
+        })
     }
 };

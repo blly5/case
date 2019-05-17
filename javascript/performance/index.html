@@ -9,13 +9,22 @@
 </head>
 <body>
 
-    <b>ReLoad</b>
-
+    <b>Reload</b>
+    <span>onLine</span>
+    <ul>
+        
+    </ul>
     <script type="module">
         import performances from './index.js';
         const pm = new performances();
         pm.show();
-        document.querySelector('b').addEventListener('click',pm.reload());
+        document.querySelector('b').addEventListener('click',function(){
+            pm.reload();
+        });
+        document.querySelector('span').addEventListener('click',function(){
+            pm.onLine();
+        });
+
     </script>
 </body>
 </html>
