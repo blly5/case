@@ -4,12 +4,14 @@ const express = require('express');
 const path = require('path');
 
 let app = express();
-let defalutPort = 80;
+let defalutPort = 8081;
 
 //////////////////
 
 let server = app;
 
-app.listen(defalutPort);
+app.use('/s1', express.static('./javascript') );
+app.use('/s2', express.static('./native-api') );
 
-app.use('/', express.static('../javascript') );
+app.listen( defalutPort );
+

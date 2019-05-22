@@ -8,7 +8,7 @@
     "start": "npm run watch-ts & nodemon ./node-mongodb-demo/server-dist/index.js",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "ws"      : "node ./server/index.js"
+    "ws"      : "nodemon ./server/index.js"
   },
   "repository": {
     "type": "git",
