@@ -6,7 +6,7 @@
     let body = document.querySelector('body');
 
     function touchLog( val ) {
-       
+        document.querySelector('body').innerHTML = '';
         let el = document.createElement('span');
         el.innerText = val;
         document.body.append( el );
