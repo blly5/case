@@ -12,8 +12,6 @@
         document.body.append( el );
     }
 
-
-    
     function forEach( arr, callback ) {
         console.log(arr);
         return Array.prototype.forEach.call(arr, callback);

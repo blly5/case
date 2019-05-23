@@ -10,8 +10,7 @@ let defalutPort = 8081;
 
 let server = app;
 
-app.use('/s1', express.static('./javascript') );
-app.use('/s2', express.static('./native-api') );
+app.use('/', express.static('./') );
 
 app.listen( defalutPort );
 
