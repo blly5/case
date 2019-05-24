@@ -14,7 +14,9 @@
             XHR.open('GET','./Guide.json');
             XHR.onreadystatechange = () => {
                 if( XHR.status == 200 ) {
-                    console.log( XHR.responseText );
+                    for( let i in JSON.parse( XHR.responseText ) ) {
+                        document.body.append( i );
+                    }
                 }
             };
             XHR.send();
