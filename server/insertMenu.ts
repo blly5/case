@@ -2,21 +2,18 @@
  * @Author: Blue
  * @Date: 2019-05-23 16:49:09
  * @Last Modified by: blue
- * @Last Modified time: 2019-05-23 20:03:08
+ * @Last Modified time: 2019-05-24 15:08:39
  */
-
 
 const path =      require('path');
 const fs =        require('fs');
 const chalk =     require('chalk');
 const execa =     require('execa');
-const console =   require('console');
 const readline =  require('readline');
+const jsonFormat= require('json-format');
 
-
-async function getContent () {
-    return await fs.readFileSync(`${ path.resolve('./') }/index.json`, 'utf-8');
-};
+import { pascal } from 'name-styles';
+import { getContent } from './lib/getContent';
 
 async function getMessage() {
     return new Promise((resolve, reject) => {
@@ -26,7 +23,7 @@ async function getMessage() {
           });
         let msg = '';
         console.log( chalk.blue('请输入:') )
-        rl.on('line', ( input ) => {
+        rl.on('line', ( input:any ) => {
             msg = input;
             rl.close();
             resolve(msg);
@@ -34,21 +31,24 @@ async function getMessage() {
     });   
 };
 
-async function setContent( i ) {
-    return await fs.writeFileSync(`${ path.resolve('./') }/index.json`, i );
+async function setContent( i:any ) {
+    return await fs.writeFileSync(`${ path.resolve('./') }/Guide.json`, i );
 };
 
-async function addContent( i ) {
-    try {
-        
-        let content = JSON.parse( await getContent() ) ; 
+function insertList(arr, last) {
+    arr[ pascal(last) ] = last; 
+    return arr;
+}
 
+async function addContent() {
+    try {
+        let content =  JSON.parse( await getContent() || '{}' );
         let inputMsg = await getMessage();
-        let w = { ...content, inputMsg };
-        
-        await setContent( JSON.stringify( content ) );     
+        let w = insertList(content, inputMsg);
+        await setContent( jsonFormat( w ) );
+        console.log( chalk.blue('添加成功') )
     } catch( e ) {
-        console.log( chalk.red( e ) );
+        console.log( chalk.blue( e ) );
     }
 };
 

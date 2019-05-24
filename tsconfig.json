@@ -1,16 +1,41 @@
 {
   "compilerOptions": {
-    "target": "ES2017",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */
-    "module": "commonjs",                          /* Concatenate and emit output to single file. */
-    "outDir": "node-mongodb-demo/server-dist",                        /* Redirect output structure to the directory. */
-    "rootDir": "node-mongodb-demo/server",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
-    "strict": true,                           /* Enable all strict type-checking options. */
-    "typeRoots": [
-      "node_modules/@types"
-    ],                       /* List of folders to include type definitions from. */
-    "esModuleInterop": true     
+      "target": "ES2017",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "declaration": false,
+      //"noImplicitAny": true, //在表达式和声明上有隐含的 any类型时报错。
+      "removeComments": true,
+      "noEmitOnError": true,
+      "noLib": false,
+      //        "alwaysStrict": true,
+      "sourceMap": true,
+      "noEmit": false,
+      "noEmitHelpers": true,
+      "allowUnreachableCode": true,
+      "newLine": "LF", // 当生成文件时指定行结束符： "crlf"（windows）或 "lf"（unix）。
+      "lib": [
+          "ES2017",
+          "DOM",
+          "DOM.Iterable",
+          "ScriptHost",
+          "ES2015.Promise"
+      ],
+      "typeRoots": [
+          "node_modules/@types"
+      ],
+      "outDir": "dist-server",
+      "rootDir": "server"
   },
   "exclude": [
-    "node_modules"
-  ] 
+      "node_modules",
+      "dist-server",
+      "dist-client",
+      "node-mongodb-demo"
+  ],
+  "compileOnSave": true,
+  "buildOnSave": false
 }
