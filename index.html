@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Course</title>
+    <link rel="stylesheet" href="./public/reset.css">
+</head>
+<body>
+        <script type="module" >
+            
+            let XHR = new XMLHttpRequest();
+            XHR.open('GET','./Guide.json');
+            XHR.onreadystatechange = () => {
+                if( XHR.status == 200 ) {
+                    console.log( XHR.responseText );
+                }
+            };
+            XHR.send();
+            
+        </script>
+</body>
+</html>

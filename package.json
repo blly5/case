@@ -7,8 +7,8 @@
     "dev": "npm run build-ts && npm run start",
     "watch-ts": "tsc -w",
     "ws": "nodemon ./server/index.js",
-    "add": "node ./dist-server/insertMenu.js",
-    "test": "tsc -w & nodemon ./dist-server/insertMenu.js"
+    "add": "node ./dist-server/insertList.js",
+    "test": "tsc -w & nodemon ./dist-server/insertList.js"
   },
   "repository": {
     "type": "git",
