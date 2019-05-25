@@ -6,6 +6,21 @@
  */
 
 
+ interface parint1 {
+     colors: String
+ }
+
+ interface parint2 {
+     colors2?: String
+ }
+
+ //readonly 只能在创建的时候修改实参
+ interface parint3 {
+     readonly colors3:String
+ }
+
+
+
 function parint( colors:{ sky:String } ) {
     console.log( colors.sky );
 };
@@ -26,4 +41,6 @@ parint( colors );
 //类型“{ sky: boolean; tree: boolean; }”的参数不能赋给类型“{ sky: String; }”的参数。
 
 
-
+export let parint3 = function( colors5 ) {
+    console.log( colors5 );
+};

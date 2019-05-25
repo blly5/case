@@ -44,6 +44,7 @@ async function addContent() {
     try {
         let content =  JSON.parse( await getContent() || '{}' );
         let inputMsg = await getMessage();
+        
         let w = insertList(content, inputMsg);
         await setContent( jsonFormat( w ) );
         console.log( chalk.blue('添加成功') )
