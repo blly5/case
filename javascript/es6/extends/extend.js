@@ -17,25 +17,41 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var addFile = /** @class */ (function () {
-    function addFile() {
+//Class
+var addNub = /** @class */ (function () {
+    function addNub() {
         this.files = 0;
     }
-    addFile.prototype.add = function () {
+    addNub.prototype.add = function () {
         this.files++;
     };
     ;
-    return addFile;
+    return addNub;
 }());
 ;
 var insertFile = /** @class */ (function (_super) {
     __extends(insertFile, _super);
     function insertFile() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.files = 2;
+        return _this;
     }
     return insertFile;
-}(addFile));
+}(addNub));
 ;
 var a = new insertFile();
-a.add();
-console.log(a);
+//call
+function addNub2() {
+    this.files = 0;
+    this.add = function () {
+        this.files++;
+    };
+}
+;
+function insertFile2() {
+    this.files = 4;
+}
+;
+var a2 = new insertFile2();
+addNub2.call(a2);
+//prototype

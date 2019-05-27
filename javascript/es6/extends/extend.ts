@@ -6,20 +6,40 @@
  */
 
 
- class addFile {
+ //Class
+
+ class addNub {
     files = 0;
     add() {
         this.files ++;
     };
  };
 
- class insertFile extends addFile {};
+ class insertFile extends addNub {
+     files = 2;
+ };
  
  let a = new insertFile();
- a.add();
- console.log( a );
 
 
+//call
+
+function addNub2() {
+    this.files = 0;
+    this.add = function() {
+        this.files ++;
+    }
+};
+
+function insertFile2() {
+    this.files = 4;
+};
+
+let a2 = new insertFile2();
+addNub2.call( a2 );
+
+
+//prototype
 
 
 
