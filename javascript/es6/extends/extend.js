@@ -55,3 +55,24 @@ function insertFile2() {
 var a2 = new insertFile2();
 addNub2.call(a2);
 //prototype
+function addNum3() {
+    this.files = 0;
+    this.add = function () {
+        this.files++;
+    };
+}
+;
+function insertFile3() { }
+;
+insertFile3.prototype = new addNum3();
+var a3 = new insertFile3();
+//Object.create
+function addNum4() {
+    this.files = 0;
+    this.add = function () {
+        this.files++;
+        console.log(this);
+    };
+}
+;
+var a4 = Object.create(addNum4);

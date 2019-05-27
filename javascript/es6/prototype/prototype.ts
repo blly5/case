@@ -41,8 +41,3 @@ c3.constructor === getColor        //true
 
 
 //
-
-
-
-
-
