@@ -11,7 +11,7 @@
         <script type="module" >
             
             let XHR = new XMLHttpRequest();
-            XHR.open('GET','./Guide.json');
+            XHR.open('GET',`./Guide.json? ${new Date().getTime()} `);
             XHR.onreadystatechange = () => {
                 if( XHR.status == 200 ) {
                     for( let i in JSON.parse( XHR.responseText ) ) {
