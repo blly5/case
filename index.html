@@ -15,7 +15,7 @@
             XHR.onreadystatechange = () => {
                 if( XHR.status == 200 ) {
                     for( let i in JSON.parse( XHR.responseText ) ) {
-                        
+                        document.body.append( i );
                     }
                 }
             };
