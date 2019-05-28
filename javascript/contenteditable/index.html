@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contenteditable</title>
+    <link rel="stylesheet" type="text/css"  href="../../public/reset.css">
+</head>
+<body>
+    
+    <div>点击编辑点击编辑点击编辑点击编辑点击编辑点击编辑点击编辑点击编辑</div>
+    <br/>
+    <button>Edit</button>
+
+    <script type="module">
+        import editContent from './index.js';
+
+        let editHTML = new editContent( document.querySelector('div') );
+
+        document.querySelector('button').addEventListener( 'click', function() {
+            editHTML.set();
+        } );
+    </script>
+
+    <style>
+    body,html {
+        padding: 20px;
+    }
+    * {
+        outline: none;
+    }
+    </style>
+</body>
+</html>

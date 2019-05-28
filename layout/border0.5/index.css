@@ -1,0 +1,19 @@
+
+.border {
+    position: relative;
+    display:inline-block;
+    text-decoration: none;
+    padding:10px 20px;
+    color:#444;
+    margin:40px;
+}
+.border::after {
+    content:"";
+    position: absolute;
+    width:220%;
+    border:1px solid currentColor;
+    height:220%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) scale(.5);
+}
