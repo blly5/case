@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-05-25 17:34:40
  */
 
-
+//类型推论
 
 
  import { parint3 } from './interface';
