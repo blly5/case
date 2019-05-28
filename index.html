@@ -8,31 +8,39 @@
     <link rel="stylesheet" href="./public/reset.css">
 </head>
 <body>
+
+    <ul>
+
+    </ul>
+
         <script type="module" >
 
             let XHR = new XMLHttpRequest();
+
+            function appendEl(el, text) {
+                let e = document.createElement('li');
+                e.innerText = text;
+                document.querySelector( cd ).appendChild( e );
+            };
+
             let res = new Promise((resolve, reject) => {
                     XHR.open('GET',`./Guide.json? ${new Date().getTime()} `);
                     XHR.onreadystatechange = () => {
-                        if( XHR.status == 200 ) {
-                            resolve( XHR.responseText )
+                        if( XHR.readyState===4 && XHR.status == 200 ) {
+                            resolve( JSON.parse( XHR.responseText ) )
                         }
                     };
                     XHR.send();
             });
 
             res.then( data => {
-                console.log( data );
-                for(var i in data ) {
-                    console.log( i );
+                for(let i in data ) {
+                    appendEl(`ul`, i);
                 }
             }, e => {
                 console.log( e );
             } );
 
-
-            
-            
         </script>
 </body>
 </html>
