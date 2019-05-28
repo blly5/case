@@ -16,3 +16,11 @@ function getColor<S>(type: S ): S {
     return type;
 };
 
+///////
+
+let getColor1 = <S> (type:S) => {
+    
+}
+
+
+
