@@ -9,17 +9,27 @@
 </head>
 <body>
         <script type="module" >
-            
+
             let XHR = new XMLHttpRequest();
-            XHR.open('GET',`./Guide.json? ${new Date().getTime()} `);
-            XHR.onreadystatechange = () => {
-                if( XHR.status == 200 ) {
-                    for( let i in JSON.parse( XHR.responseText ) ) {
-                        document.body.append( i );
-                    }
+            let res = new Promise((resolve, reject) => {
+                    XHR.open('GET',`./Guide.json? ${new Date().getTime()} `);
+                    XHR.onreadystatechange = () => {
+                        if( XHR.status == 200 ) {
+                            resolve( XHR.responseText )
+                        }
+                    };
+                    XHR.send();
+            });
+
+            res.then( data => {
+                 data = JSON.parse( data );
+                for(var i in data ) {
+                    console.log( i );
                 }
-            };
-            XHR.send();
+            } );
+
+
+            
             
         </script>
 </body>
