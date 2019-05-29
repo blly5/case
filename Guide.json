@@ -1,4 +1,13 @@
 {
 	"Border0.5": "border0.5",
-	"Html2Canvas": "html2canvas"
+	"Html2Canvas": "html2canvas",
+	"Layout": "layout",
+	"Tools": "tools",
+	"Typescript": "typescript",
+	"VueSsr": "vue-ssr",
+	"Compute": "compute",
+	"Design": "design",
+	"NativeApi": "native-api",
+	"NodeMongodbDemo": "node-mongodb-demo",
+	"Server": "server"
 }

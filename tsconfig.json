@@ -1,41 +1,20 @@
 {
-  "compilerOptions": {
-      "target": "ES2017",
-      "module": "commonjs",
+    "compileOnSave": false,
+    "compilerOptions": {
+      "outDir": "dist-server",
+      "baseUrl": "server",
+      "sourceMap": true,
+      "declaration": false,
       "moduleResolution": "node",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "allowSyntheticDefaultImports": true,
-      "declaration": false,
-      //"noImplicitAny": true, //在表达式和声明上有隐含的 any类型时报错。
-      "removeComments": true,
-      "noEmitOnError": true,
-      "noLib": false,
-      //        "alwaysStrict": true,
-      "sourceMap": true,
-      "noEmit": false,
-      "noEmitHelpers": true,
-      "allowUnreachableCode": true,
-      "newLine": "LF", // 当生成文件时指定行结束符： "crlf"（windows）或 "lf"（unix）。
-      "lib": [
-          "ES2017",
-          "DOM",
-          "DOM.Iterable",
-          "ScriptHost",
-          "ES2015.Promise"
-      ],
+      "target": "es5",
       "typeRoots": [
-          "node_modules/@types"
+        "node_modules/@types"
       ],
-      "outDir": "dist-server",
-      "rootDir": "server"
-  },
-  "exclude": [
-      "node_modules",
-      "dist-server",
-      "dist-client",
-      "node-mongodb-demo"
-  ],
-  "compileOnSave": true,
-  "buildOnSave": false
-}
+      "lib": [
+        "es2016",
+        "dom"
+      ]
+    }
+  }
