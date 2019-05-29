@@ -1,18 +1,13 @@
 {
 	"Layout": "layout",
-	"Tools": "tools",
+	"Tools": {
+		"Git": "git"
+	},
 	"Typescript": "typescript",
 	"VueSsr": "vue-ssr",
 	"Compute": "compute",
 	"Design": "design",
 	"NativeApi": "native-api",
 	"NodeMongodbDemo": "node-mongodb-demo",
-	"Server": "server",
-	"Dawd": {
-		"Awd": "awd"
-	},
-	"D": "d",
-	"Rerc": {
-		"Erf": "erf"
-	}
+	"Server": "server"
 }
