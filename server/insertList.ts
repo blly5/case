@@ -21,12 +21,13 @@ async function getMessage() {
             input: process.stdin,
             output: process.stdout
           });
+
         let msg = '';
-        console.log( chalk.blue('请输入:') )
+
         rl.on('line', ( input:any ) => {
             msg = input;
             rl.close();
-            resolve(msg);
+            resolve( msg );
         }); 
     });   
 };
@@ -36,7 +37,17 @@ async function setContent( i:any ) {
 };
 
 function insertList(arr, last) {
-    arr[ pascal(last) ] = last; 
+
+    let _msg = last.split(' ');
+    if( _msg.length > 1 ) {
+        arr[ pascal( _msg[0] ) ] = {
+            [ pascal( _msg[1] ) ] : _msg[1]
+        }
+    }
+    else {
+        arr[pascal( _msg[0] )] =  _msg[0] ;
+    }
+   
     return arr;
 }
 
@@ -44,9 +55,8 @@ async function addContent() {
     try {
         let content =  JSON.parse( await getContent() || '{}' );
         let inputMsg = await getMessage();
-        
-        let w = insertList(content, inputMsg);
-        await setContent( jsonFormat( w ) );
+        let j = insertList(content, inputMsg);
+        await setContent( jsonFormat( j ) );
         console.log( chalk.blue('添加成功') )
     } catch( e ) {
         console.log( chalk.blue( e ) );

@@ -20,7 +20,7 @@
         return await fs.readFileSync(`./Guide.json`, 'utf-8');
 
      } catch (e) {
-        let _created = await fs.writeFileSync('./Guide.json', 'utf-8', {});
+        let _created = await fs.writeFileSync('./Guide.json', 'utf-8', '{}');
         console.log( chalk.blue( `Create in : ${ path.resolve('./') }`) );
         return _created;
      }
