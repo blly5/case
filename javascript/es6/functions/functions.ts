@@ -27,4 +27,8 @@ function getColor11() {
 let call = ( key, ...args ) => context => context[key]( ...args );
 
 
+//对象字面量
 
+function getColor12( key, val ) {
+    return { [key]:val };
+};
