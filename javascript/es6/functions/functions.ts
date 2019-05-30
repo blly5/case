@@ -23,11 +23,8 @@ function getColor11() {
     }
 };
 
-let w = new getColor11;
+
+let call = ( key, ...args ) => context => context[key]( ...args );
 
 
-function getColor12() {
-    var type = 'Orange'
-    var index = 10
 
-};

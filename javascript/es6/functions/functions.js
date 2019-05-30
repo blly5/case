@@ -2,7 +2,7 @@
  * @Author: Blue
  * @Date: 2019-05-29 15:25:10
  * @Last Modified by: blue
- * @Last Modified time: 2019-05-29 15:25:10
+ * @Last Modified time: 2019-05-29 19:58:31
  */
 function getColor11() {
     var _this = this;
@@ -20,11 +20,13 @@ function getColor11() {
     this.get2 = function () {
         console.log(_this.index);
     };
-}
-;
+};
+
+console.log(`done`);
+
+
 var w = new getColor11;
 function getColor12() {
     var type = 'Orange';
     var index = 10;
-}
-;
+};
