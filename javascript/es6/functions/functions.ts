@@ -27,6 +27,7 @@ function getColor11() {
 let call = ( key, ...args ) => context => context[key]( ...args );
 
 
+<<<<<<< HEAD
 //修改对象字面量name
 
 function getColor12( key, val ) {
@@ -56,3 +57,10 @@ listen( data );
 console.log( data.key );
 console.log( data.key );
 
+=======
+//对象字面量
+
+function getColor12( key, val ) {
+    return { [key]:val };
+};
+>>>>>>> a49aa93e46ca9a21bcea171bc5ccbea2ec389b06
