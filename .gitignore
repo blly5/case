@@ -4,3 +4,4 @@ node_modules
 tsc-pm2.json
 tsconfig.json
 dist-server
+.vscode
