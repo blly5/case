@@ -24,6 +24,7 @@
     "@types/color": "^3.0.0",
     "@types/graphql": "^14.2.0",
     "@types/mongodb": "^3.1.25",
+    "commander": "^2.20.0",
     "execa": "^1.0.0",
     "express": "^4.16.4",
     "got": "^9.6.0",
