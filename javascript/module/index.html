@@ -9,6 +9,13 @@
     <!-- 引入标签 type="module" 不支持默认路径 -->
     <script type="module">
         import append from './index.js';
+        
+        setTimeout(() => {
+            import('./index2.js').then( a => {
+                console.log( a );
+            } )
+        }, 3000);
+
         append();
     </script>
     

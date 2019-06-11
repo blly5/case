@@ -1,5 +1,4 @@
 
-
 const getPixels = require('get-pixels');
 
 getPixels('./pictrue/1.jpeg', function(err, pixels) {
