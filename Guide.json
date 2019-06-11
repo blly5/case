@@ -1,5 +1,7 @@
 {
-	"Layout": "layout",
+	"Layout": {
+		"OffsetScrollGuide": "offset-scroll-guide"
+	},
 	"Tools": {
 		"Git": "git"
 	},
