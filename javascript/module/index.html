@@ -11,9 +11,14 @@
         import append from './index.js';
         
         setTimeout(() => {
+
+            // import xxx from 'xxxx.js';
+            // 错误 只能在顶层引入、setTimeout 无效
+        
+            //import 按需加载 动态加载 ...
             import('./index2.js').then( a => {
                 console.log( a );
-            } )
+            });
         }, 3000);
 
         append();

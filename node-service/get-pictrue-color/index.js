@@ -1,8 +1,14 @@
 
-const getPixels = require('get-pixels');
+const jpeg       = require('jpeg-js');
+const fs         = require('fs');
+const img        = fs.readFileSync('./pictrue/1.jpeg');
 
-getPixels('./pictrue/1.jpeg', function(err, pixels) {
-    
-    let { data } = pixels;
-    console.log( data );
-})
+let rawImgData   = jpeg.decode( img ); 
+
+console.log(rawImgData);
+
+    // fs.writeFile('./t1.txt', rawImgData ,function(){});
+
+
+
+
