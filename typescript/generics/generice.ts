@@ -1,8 +1,8 @@
 /*
  * @Author: Blue
  * @Date: 2019-05-28 14:01:26
- * @Last Modified by: blue
- * @Last Modified time: 2019-05-28 14:01:26
+ * @Last Modified by: Blue
+ * @Last Modified time: 2019-06-29 14:00:23
  */
 
  //link: https://www.tslang.cn/docs/handbook/generics.html
@@ -30,9 +30,12 @@ getColor1(123)           //类型推论 编译器会根据传参来确认、类�
 
 //使用类型变量
 
-function getColor2<T>(type: Array<T> ): Array<T> {
-    return type
+function getColor20<T>( type: T[] ): T[] {
+    return type;
+    // return type.length
 }
+
+
 
 
 
