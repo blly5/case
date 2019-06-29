@@ -1,46 +1,39 @@
 /*
  * @Author: Blue
  * @Date: 2019-05-23 16:49:09
- * @Last Modified by: blue
- * @Last Modified time: 2019-05-24 15:08:39
+ * @Last Modified by: Blue
+ * @Last Modified time: 2019-06-29 18:01:48
  */
 
-
- interface parint1 {
-     colors: String
+ //必传接口
+ interface parint1Value {
+     color: String
  }
 
- interface parint2 {
-     colors2?: String
+function parint1( type: parint1Value ) {
+    return type;  
+};
+
+//可传接口
+ interface parint2Value {
+     color ?: String
  }
 
- //readonly 只能在创建的时候修改实参
- interface parint3 {
-     readonly colors3:String
- }
-
-
-
-function parint( colors:{ sky:String } ) {
-    console.log( colors.sky );
+function parint2( type:parint2Value ) {
+    return type;
 };
 
-let colors = {
-    sky:  'blue',
-    tree: 'green'
-};
-
-let colors2 = {
-    sky: true,
-    tree: false
-};
-
-parint( colors );
-
-// parint( colors2 );
-//类型“{ sky: boolean; tree: boolean; }”的参数不能赋给类型“{ sky: String; }”的参数。
+//只读参数
+ function parint3( type: {readonly color: number } ) {
+    //  type.color = '213';
+    // Cannot assign to 'color' because it is a read-only property.ts(2540)
+    console.log(type);
+ };
 
 
-export let parint3 = function( colors5 ) {
-    console.log( colors5 );
-};
+//只读数组
+
+let arr: number[] = [5, 55, 555];
+const readOnlyArr: ReadonlyArray<any> = arr;
+
+
