@@ -3,6 +3,6 @@
 
  https://l1yuu.github.io/course/
 
-<h3> npm run add -> 创建JOSN Menu列表 </h3>
+<h3> Course ✨✨ </h3>
 
 
