@@ -2,13 +2,12 @@
  * @Author: Blue
  * @Date: 2019-05-28 14:01:26
  * @Last Modified by: Blue
- * @Last Modified time: 2019-06-29 14:32:12
+ * @Last Modified time: 2019-06-29 14:33:18
  */
 
  //link: https://www.tslang.cn/docs/handbook/functions.html
 
 
- 
  function getColor([type, index] : [String, Number] ) {
      return [type, index];
  };
