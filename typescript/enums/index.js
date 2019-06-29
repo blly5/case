@@ -2,7 +2,7 @@
  * @Author: Blue
  * @Date: 2019-06-29 13:55:50
  * @Last Modified by: Blue
- * @Last Modified time: 2019-06-29 14:25:18
+ * @Last Modified time: 2019-06-29 14:52:12
  */
 //link: https://www.tslang.cn/docs/handbook/enums.html
 //Number
@@ -28,3 +28,16 @@ var Color31;
     Color31["glaxy"] = "gary";
 })(Color31 || (Color31 = {}));
 ;
+//mixed
+var Color32;
+(function (Color32) {
+    Color32["sky"] = "blue";
+    Color32[Color32["land"] = 0] = "land";
+    Color32[Color32["glaxy"] = 1] = "glaxy";
+    Color32[Color32["spark"] = 2] = "spark";
+})(Color32 || (Color32 = {}));
+;
+//{ '0': 'land', '1': 'glaxy', '2': 'spark', sky: 'blue', land: 0, glaxy: 1, spark: 2 }
+// question
+// Color32.sky = 12;
+//Cannot assign to 'sky' because it is a read-only
