@@ -2,7 +2,7 @@
  * @Author: Blue
  * @Date: 2019-06-29 13:55:50
  * @Last Modified by: Blue
- * @Last Modified time: 2019-06-29 14:52:12
+ * @Last Modified time: 2019-06-29 15:31:31
  */
 //link: https://www.tslang.cn/docs/handbook/enums.html
 //Number
@@ -14,11 +14,10 @@ var Colors30;
 })(Colors30 || (Colors30 = {}));
 ;
 // 1 2 3 ...
-function quest(des, index, type) {
-    console.log("" + des, index, type);
-}
-;
-quest('colorType:', Colors30.sky, Colors30[0]);
+// function quest( des:String, index, type ) {
+//     console.log( `${ des }`, index, type );
+// };
+// quest('colorType:', Colors30.sky, Colors30[0] );
 // colorType: 0 sky
 //String
 var Color31;
@@ -41,3 +40,11 @@ var Color32;
 // question
 // Color32.sky = 12;
 //Cannot assign to 'sky' because it is a read-only
+var Color33;
+(function (Color33) {
+    Color33[Color33["sky"] = 0] = "sky";
+    Color33[Color33["land"] = 5] = "land";
+    Color33[Color33["glaxy"] = 8] = "glaxy";
+})(Color33 || (Color33 = {}));
+;
+console.log(Color32);
