@@ -24,6 +24,7 @@
     "@types/color": "^3.0.0",
     "@types/graphql": "^14.2.0",
     "@types/mongodb": "^3.1.25",
+    "@types/node-schedule": "^1.2.3",
     "@types/request": "^2.48.1",
     "chalk": "^2.4.2",
     "color-convert": "^2.0.0",
