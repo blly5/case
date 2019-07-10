@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Course</title>
+    <title>Guide</title>
     <link rel="stylesheet" href="./public/reset.css">
 </head>
 <body>
@@ -13,34 +13,58 @@
 
     </ul>
 
-        <script type="module" >
+    <script type="module" >
 
-            let XHR = new XMLHttpRequest();
+        let XHR = new XMLHttpRequest();
+        function appendEl(el, e) {
+            let _HTML = document.querySelector( el ).innerHTML;
+            document.querySelector( el ).innerHTML = _HTML + e;
+        };
+        let res = new Promise((resolve, reject) => {
+                XHR.open('GET',`./Guide.json? ${new Date().getTime()} `);
+                XHR.onreadystatechange = () => {
+                    if( XHR.readyState===4 && XHR.status == 200 ) {
+                        resolve( JSON.parse( XHR.responseText ) )
+                    }
+                };
+                XHR.send();
+        });
+        res.then( data => {
+            let tmp = ``;
+            for(let i in data ) {
+                if(Object.prototype.toString.call(data[i]) === '[object Object]') {
+                    for( let ii in Object.keys(data[i]) ) {
+                        tmp += `<p>${ Object.keys(data[i])[ii] }</p>`;
+                    }
+                };
+                    appendEl(`ul`, `<li> ${ i } </li>` + tmp );
+                    tmp = ``;
+            }
+        }, e => {
+            console.log( e );
+        } );
 
-            function appendEl(el, text) {
-                let e = document.createElement('li');
-                e.innerText = text;
-                document.querySelector( el ).appendChild( e );
-            };
+    </script>
 
-            let res = new Promise((resolve, reject) => {
-                    XHR.open('GET',`./Guide.json? ${new Date().getTime()} `);
-                    XHR.onreadystatechange = () => {
-                        if( XHR.readyState===4 && XHR.status == 200 ) {
-                            resolve( JSON.parse( XHR.responseText ) )
-                        }
-                    };
-                    XHR.send();
-            });
+    <style>
+        ul {
+            color:rgb(140, 157, 211);
+            font-weight:lighter;
+            font-size:18px;
+            padding:10px 20px;
+        }
+        ul li {
+            line-height:1.4;
+            padding:10px;
+        }
+        ul p {
+            border-left:3px solid #ccc;
+            margin:0 0 6px 30px;
+            padding-left:10px;
+        }
+    </style>
 
-            res.then( data => {
-                for(let i in data ) {
-                    appendEl(`ul`, i);
-                }
-            }, e => {
-                console.log( e );
-            } );
 
-        </script>
+
 </body>
 </html>

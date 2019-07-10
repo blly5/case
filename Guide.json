@@ -1,6 +1,8 @@
 {
 	"Layout": {
-		"OffsetScrollGuide": "offset-scroll-guide"
+		"OffsetScrollGuide": "offset-scroll-guide",
+		"Border0.5": "border0.5",
+		"Contenteditable": "contenteditable"
 	},
 	"Tools": {
 		"Git": "git"
@@ -9,7 +11,16 @@
 	"VueSsr": "vue-ssr",
 	"Compute": "compute",
 	"Design": "design",
-	"NativeApi": "native-api",
+	"NativeApi": {
+		"Notification": "notification",
+		"WebRtc": "web-rtc",
+		"3Dtouch": "3dtouch",
+		"WebWorker": "web-worker"
+	},
 	"NodeMongodbDemo": "node-mongodb-demo",
-	"Server": "server"
+	"Server": "server",
+	"JavaScript": {
+		"Performance": "performance",
+		"ES6": "es6"
+	}
 }

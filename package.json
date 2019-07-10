@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run build-ts && npm run start",
     "watch-ts": "tsc -w",
-    "ws": "nodemon ./server/index.js",
+    "ws": "node ./web-server/index.js",
     "add": "node ./dist-server/insertList.js",
     "test": "tsc -w & nodemon ./dist-server/insertList.js"
   },

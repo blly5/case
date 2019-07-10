@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-07-10 15:06:11 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-07-10 15:37:42
+ * @Last Modified time: 2019-07-10 15:47:37
  */
 
 const express =         require('express');
@@ -13,7 +13,7 @@ const process =         require('process');
 
 let app =           express();
 let defalutPort =   8080;
-let _path =         !!process.argv.splice(2)[0] ? process.argv.splice(2)[0] : '../';
+let _path =         !!process.argv.splice(2)[0] ? process.argv.splice(2)[0] : './';
 
 app.use( '/', express.static( _path ) );
 app.listen( defalutPort );
