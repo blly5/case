@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../public/reset.css">
+    <title>ResponsivePicture</title>
+</head>
+<body>
+    
+    <!-- 单个像素密度 -->
+    <img 
+        srcset= "../../public/static/mayday_00.jpg 2x,
+                ../../public/static/mayday.jpg 1x"
+        src="../../public/static/mayday.jpg"
+        width="50%"
+    alt="">
+
+    <!-- 屏幕宽度 -->
+    <img 
+        srcset="../../public/static/mayday.jpg 800w,
+                ../../public/static/mayday_02.jpg 1000w"
+        sizes=" (max-width:800px) 400px,
+                (max-width:2000px) 30vw"
+        src="../../public/static/mayday.jpg" alt="">
+    
+    <!-- srcset 图片选择图像集 -->
+
+    <!-- sizes 媒体条件 -->
+
+</body>
+</html>
