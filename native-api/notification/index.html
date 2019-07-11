@@ -8,9 +8,8 @@
     <script type="module">
     
         import Notifications from './index.js';
-        
-        let Guide = new Notifications();
-        Guide.show();
+        let guide = new Notifications('test',{ icon: 'http://s1.l1yu.com/icons/l1yu_5.png' });   
+        guide.show({ title: '测试啊'});
     </script>
 </head>
 <body>
