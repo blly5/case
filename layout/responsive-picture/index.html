@@ -8,8 +8,9 @@
     <title>ResponsivePicture</title>
 </head>
 <body>
-    
+
     <!-- 单个像素密度 -->
+
     <img 
         srcset= "../../public/static/mayday_00.jpg 2x,
                 ../../public/static/mayday.jpg 1x"
@@ -17,17 +18,49 @@
         width="50%"
     alt="">
 
+    
     <!-- 屏幕宽度 -->
+
     <img 
-        srcset="../../public/static/mayday.jpg 800w,
-                ../../public/static/mayday_02.jpg 1000w"
-        sizes=" (max-width:800px) 400px,
-                (max-width:2000px) 30vw"
-        src="../../public/static/mayday.jpg" alt="">
+        srcset="../../public/static/2.png?v2 400w,
+                ../../public/static/1.png?v3 800w"
+        sizes="(min-width: 500px) 200px,
+               (min-width: 800px) 800px,
+                300px"
+        src="../../public/static/2.png?v1" alt="">
     
     <!-- srcset 图片选择图像集 -->
-
     <!-- sizes 媒体条件 -->
+
+
+    <!-- pictrue -->
+    
+    <picture>
+        <source media="(max-width: 800px)" srcset="../../public/static/1.png" >
+        <source media="(max-width: 1000px)" srcset="../../public/static/2.png" >
+        <img src="" alt="">
+    </picture>
+
+
+    <!-- MIME test -->
+
+    <picture>
+        <source type="image/svg/xml" srcset="" >
+        <source type="image/webp" srcset="" >
+    </picture>
+
+
+    <!-- background -->
+
+    <div class="respons-img"></div>
+
+    <style>
+        .respons-img {
+            width:500px;
+            height: 500px;
+            background-image: -webkit-image-set(url('../../public/static/2.png') 1x, url('../../public/static/1.png') 2x );
+        }
+    </style>
 
 </body>
 </html>
