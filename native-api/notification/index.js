@@ -15,7 +15,7 @@ export default class {
         this.option = Object.assign({}, defaultOpt, opt);
     }
 
-    show( { title, onclick = {}, onshow = {}, onerror = {}, onclose = {} } ) {
+    show ( { title, onclick = {}, onshow = {}, onerror = {}, onclose = {} } ) {
         this.title = title || this.title;
         if(!'Notification' in window) {
             console.log('dont Suport Notification');
