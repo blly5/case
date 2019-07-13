@@ -3,7 +3,8 @@
 		"OffsetScrollGuide": "offset-scroll-guide",
 		"Border0.5": "border0.5",
 		"Contenteditable": "contenteditable",
-		"ResponsivePicture": "responsive-picture"
+		"ResponsivePicture": "responsive-picture",
+		"StyleParint": "style-parint"
 	},
 	"Tools": {
 		"Git": "git"
