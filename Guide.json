@@ -4,7 +4,8 @@
 		"Border0.5": "border0.5",
 		"Contenteditable": "contenteditable",
 		"ResponsivePicture": "responsive-picture",
-		"StyleParint": "style-parint"
+		"StyleParint": "style-parint",
+		"TransparentGrid": "transparent-grid"
 	},
 	"Tools": {
 		"Git": "git"
