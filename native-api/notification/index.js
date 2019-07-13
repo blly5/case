@@ -1,9 +1,14 @@
+/*
+ * @Author: Blue 
+ * @Date: 2019-07-13 11:36:30 
+ * @Last Modified by: Blue
+ * @Last Modified time: 2019-07-13 11:37:03
+ */
+
 ;
 export default class {
-
     constructor(title, opt) {
         this.title = title || 'test';
-
         const defaultOpt = {
             dir: 'ltr',
             lang: 'CN',
@@ -27,5 +32,4 @@ export default class {
         notice.onerror = onerror;
         notice.onclose = onclose;
     }
-    
 };
