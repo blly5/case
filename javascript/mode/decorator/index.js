@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-07-15 15:02:31 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-07-15 16:17:06
+ * @Last Modified time: 2019-07-17 10:43:24
  */
 
 
@@ -31,7 +31,6 @@ Function.prototype.after = function( afterfn ) {
             return ret;
         }
     };
-    
 };
 
 
