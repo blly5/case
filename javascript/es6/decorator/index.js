@@ -2,7 +2,7 @@
  * @Author: Blue
  * @Date: 2019-07-12 16:58:48
  * @Last Modified by: Blue
- * @Last Modified time: 2019-07-19 17:37:26
+ * @Last Modified time: 2019-07-23 14:50:29
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -76,23 +76,20 @@ function H(target) {
 ;
 var I = new G();
 // console.log(I.isTest);  halo
-// 4. 属性修饰
 var J = /** @class */ (function () {
     function J() {
     }
     J.prototype.name = function () {
-        return "";
+        return 'halo';
     };
     __decorate([
-        K
+        readOnly
     ], J.prototype, "name");
     return J;
 }());
 ;
-function K(target, name, descriptor) {
-    descriptor.enumerable = false;
+function readOnly(target, name, descriptor) {
+    descriptor.writable = false;
     return descriptor;
 }
-;
-var s = new J();
-console.log(s);
+readOnly(J.prototype, 'name', descriptor);

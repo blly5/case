@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CustomElemnets</title>
+</head>
+<body>
+    <element-info prop="black" ></element-info>
+    
+    <ul is="elementul-info"></ul>
+
+</body>
+<script>
+
+class ElementULInfo extends HTMLUListElement {
+    constructor() {
+        super();
+        var shadow = this.attachShadow({mode: 'open'});
+        var warpper = document.createElement('span');
+        shadow.appendChild( warpper );
+    }
+}
+
+customElements.define('elementul-info', ElementULInfo, { extends: 'ul' });
+
+
+
+class ElementInfo extends HTMLElement {
+    constructor() {
+        super();
+        //创建shadowRoot
+        var shadow = this.attachShadow({mode: 'open'});
+        var style  = document.createElement('style');
+            style.textContent = `
+                .warpper {
+                    display:block;
+                    width:100px;
+                    height:100px;
+                    background:#333;
+                    color:#fff;
+                }
+                `;
+        var warpper = document.createElement('span');
+        var attr    = this.getAttribute('prop');
+            warpper.setAttribute('class', 'warpper');
+            warpper.append(attr);
+        shadow.appendChild( warpper );
+        shadow.appendChild( style );
+
+    }
+    connectedCallback() {
+        console.log('done');
+    }
+}
+customElements.define('element-info', ElementInfo );
+
+</script>
+</html>

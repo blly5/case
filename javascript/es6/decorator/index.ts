@@ -3,7 +3,7 @@
  * @Author: Blue 
  * @Date: 2019-07-12 16:58:48 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-07-19 17:37:26
+ * @Last Modified time: 2019-07-23 14:50:29
  */
 
 
@@ -67,23 +67,16 @@ let I = new G();
 
 // console.log(I.isTest);  halo
 
-
-// 4. 属性修饰
-
 class J {
-   @K
+   @readOnly
    name() {
-      return ``
+      return 'halo';
    }
 };
 
-function K(target, name, descriptor ) {
-   descriptor.enumerable = false;
+function readOnly(target, name, descriptor) {
+   descriptor.writable = false;
    return descriptor;
-};
-let s = new J();
-console.log(s);
+}
 
-
-
-
+readOnly(J.prototype, 'name', descriptor);

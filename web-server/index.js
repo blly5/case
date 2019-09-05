@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-07-10 15:06:11 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-07-18 11:42:40
+ * @Last Modified time: 2019-07-27 11:40:36
  */
 
 const express =         require('express');
@@ -18,7 +18,7 @@ const opt = function (res, path, stat) {
 };
 
 let app =           express();
-let defalutPort =   8080;
+let defalutPort =   8083;
 
 let _path = JSON.parse(process.env.npm_config_argv).remain[0] ? JSON.parse(process.env.npm_config_argv).remain[0] : './';
 
