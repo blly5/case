@@ -1,4 +1,9 @@
-
+/*
+ * @Author: Blue 
+ * @Date: 2019-09-06 10:39:12 
+ * @Last Modified by:   Blue 
+ * @Last Modified time: 2019-09-06 10:39:12 
+ */
 
 export default class {
     performance = window.performance;

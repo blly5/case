@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Module</title>
-
-    <!-- 引入标签 type="module" 不支持默认路径 -->
-    <script type="module">
-        import append from './index.js';
-        
-        setTimeout(() => {
-
-            // import xxx from 'xxxx.js';
-            // 错误 只能在顶层引入、setTimeout 无效
-        
-            //import 按需加载 动态加载 ...
-            import('./index2.js').then( a => {
-                console.log( a );
-            });
-        }, 3000);
-
-        append();
-    </script>
-    
 </head>
 <body>
-    <div></div>
-    <div></div>
+    <div class="testBox"></div>
 </body>
+<!-- 引入标签 type="module" 不支持默认路径 -->
+<script type="module">
+    import append from './index.js';
+    
+    setTimeout(() => {
+        // import xxx from 'xxxx.js' 这种形式只能在顶层引入、setTimeout 无效
+        
+        //import 按需加载 动态加载 ...
+        import('./index2.js').then( a => {
+            a.changeBg();
+        });
+    }, 3000);
+
+    append();
+</script>
+<style>
+    .testBox {
+        width:100px;
+        height:100px;
+        background:#fff;
+    }
+</style>
 </html>
