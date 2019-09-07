@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-07-12 10:36:35 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-09-06 15:07:11
+ * @Last Modified time: 2019-09-07 15:42:55
  */
 
 //blob 原始数据 类文件对象 File Blob
@@ -21,7 +21,6 @@ reader.readAsText(blob);
 reader.addEventListener("loadend", function() {
    console.log(reader);
 });
-
 
 document.querySelector('.upload').addEventListener('change', function() {
    let url = URL.createObjectURL(this.files[0]);
