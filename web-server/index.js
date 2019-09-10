@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-07-10 15:06:11 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-09-05 15:59:40
+ * @Last Modified time: 2019-09-10 14:50:42
  */
 
 const express =         require('express');
@@ -19,7 +19,6 @@ async function checkNetWorkPort() {
     port: 8080,
     stopPort: 9000
   });
-  console.log(`unDone`);
 };
 
 const headerOption = function (res, path, stat) {
