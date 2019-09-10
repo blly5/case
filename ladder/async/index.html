@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./async.js"></script>
+  <script src="/public/baidu-analysis.js"></script>
+  <title>Async</title>
+</head>
+<body>
+</body>
+<script>
+// https://caolan.github.io/async/v3/docs.html#concat
+
+console.info(`async:`, async);
+
+
+console.group(`waterFall`);
+async.waterfall([
+  function(callback) {
+    console.log('step1: 1');
+    callback(null, 1);
+    
+},
+  function(arg, callback) {
+    console.log('step2:', arg+1);
+    callback(null, arg+1);
+  }
+], function(err, res) {
+  console.log(err, res);
+})
+console.groupEnd();
+
+</script>
+</html>
