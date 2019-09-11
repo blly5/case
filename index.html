@@ -8,19 +8,11 @@
     <link rel="stylesheet" href="./public/reset.css">
 </head>
 <body>
-
-    <ul>
-
-    </ul>
+    <ul></ul>
 
     <script type="module" >
-
         let XHR = new XMLHttpRequest();
-        function appendEl(el, e) {
-            let _HTML = document.querySelector( el ).innerHTML;
-            document.querySelector( el ).innerHTML = _HTML + e;
-        };
-        let res = new Promise((resolve, reject) => {
+        let res = new Promise((resolve) => {
                 XHR.open('GET',`./Guide.json? ${new Date().getTime()} `);
                 XHR.onreadystatechange = () => {
                     if( XHR.readyState===4 && XHR.status == 200 ) {
@@ -29,21 +21,19 @@
                 };
                 XHR.send();
         });
+        
         res.then( data => {
-            let tmp = ``;
-            for(let i in data ) {
-                if(Object.prototype.toString.call(data[i]) === '[object Object]') {
-                    for( let ii in Object.keys(data[i]) ) {
-                        tmp += `<p>${ Object.keys(data[i])[ii] }</p>`;
-                    }
-                };
-                    appendEl(`ul`, `<li> ${ i } </li>` + tmp );
-                    tmp = ``;
-            }
-        }, e => {
-            console.log( e );
-        } );
-
+            let tmp = '',
+                children = '';
+                data.forEach(item => {
+                    tmp = `<li>${item.title}</li>`;
+                    children = item.children&&item.children.map(i => `<a href="${item.path}/${i.path}/">${i.title}</a>`).join('') || '';
+                    let list = document.querySelector('ul');
+                    list.innerHTML = list.innerHTML + tmp + children;
+                    tmp,children = '';
+                });
+                
+        });
     </script>
 
     <style>
@@ -56,11 +46,20 @@
         ul li {
             line-height:1.4;
             padding:10px;
+            font-weight:bold;
         }
-        ul p {
+        ul a {
+            display:block;
+            position: relative;
             border-left:3px solid #ccc;
-            margin:0 0 6px 30px;
+            color:rgb(123, 137, 184);
+            font-weight: 400;
+            margin:0 0 15px 30px;
             padding-left:10px;
+            text-decoration: unset;
+        }
+        ul a:hover {
+            border-left:3px solid rgb(140, 157, 211);
         }
     </style>
 
