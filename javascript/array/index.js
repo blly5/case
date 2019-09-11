@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-09-10 14:56:33 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-09-10 15:42:09
+ * @Last Modified time: 2019-09-11 16:17:51
  */
 
 let arr1 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];
@@ -72,3 +72,14 @@ console.group('flatMap');
 let arr9_1 = arr9.flatMap(item => item + '|');
 console.log(arr9_1);
 console.groupEnd();
+
+let arr10 = [1, 312, 123, 243, 324];
+console.group('reduce');
+let arr10_res = arr10.reduce((val, val2, index, arr) => val + val2);
+console.log(arr10_res);
+console.groupEnd();
+
+let arr11 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];
+
+
+console.log('------special------');
