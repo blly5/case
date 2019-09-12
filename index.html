@@ -9,6 +9,7 @@
 </head>
 <body>
     <ul></ul>
+    
 
     <script type="module" >
         let XHR = new XMLHttpRequest();
@@ -30,8 +31,7 @@
                     children = item.children && 
                                item.children.map(i => 
                                     `<a href="${item.path}/${i.path}/">${i.title}</a>` + 
-                                    (i.children && i.children.map(j => `<a class="lastChild" href="${item.path}/${i.path}/${j.path}">${j.title}</a>`)
-                                || ''))
+                                    (i.children && i.children.map(j => `<a class="lastChild" href="${item.path}/${i.path}/${j.path}">${j.title}</a>`).join('') || ''))
                     .join('') || '';
                     let list = document.querySelector('ul');
                     list.innerHTML = list.innerHTML + tmp + children;
