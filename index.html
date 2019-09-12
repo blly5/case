@@ -27,7 +27,12 @@
                 children = '';
                 data.forEach(item => {
                     tmp = `<li>${item.title}</li>`;
-                    children = item.children&&item.children.map(i => `<a href="${item.path}/${i.path}/">${i.title}</a>`).join('') || '';
+                    children = item.children && 
+                               item.children.map(i => 
+                                    `<a href="${item.path}/${i.path}/">${i.title}</a>` + 
+                                    (i.children && i.children.map(j => `<a class="lastChild" href="${item.path}/${i.path}/${j.path}">${j.title}</a>`)
+                                || ''))
+                    .join('') || '';
                     let list = document.querySelector('ul');
                     list.innerHTML = list.innerHTML + tmp + children;
                     tmp,children = '';
@@ -57,6 +62,9 @@
             margin:0 0 15px 30px;
             padding-left:10px;
             text-decoration: unset;
+        }
+        ul a.lastChild {
+            margin:0 0 15px 50px;
         }
         ul a:hover {
             border-left:3px solid rgb(140, 157, 211);

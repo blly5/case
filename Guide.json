@@ -23,7 +23,43 @@
 			},
 			{
 				"title": "es6",
-				"path": "es6"
+				"path": "es6",
+				"children": [
+					{
+						"title": "extends",
+						"path": "extends"
+					},
+					{
+						"title": "functions",
+						"path": "functions"
+					},
+					{
+						"title": "module",
+						"path": "module"
+					},
+					{
+						"title": "prototype",
+						"path": "prototype"
+					},
+					{
+						"title": "reduceright",
+						"path": "reduceright"
+					},
+					{
+						"title": "arraybuffer",
+						"path": "arraybuffer"
+					}
+				]
+			},
+			{
+				"title": "File",
+				"path": "file",
+				"children": [
+					{
+						"title": "Blob",
+						"path": "blob"
+					}
+				]
 			},
 			{
 				"title": "module",
@@ -79,7 +115,13 @@
 			},
 			{
 				"title": "WebComponent",
-				"path": "web-component"
+				"path": "web-component",
+				"children": [
+					{
+						"title": "CustomElements",
+						"path": "custom-elements"
+					}
+				]
 			}
 		]
 	},
@@ -120,6 +162,18 @@
 			{
 				"title": "basic-types",
 				"path": "basic-types"
+			},
+			{
+				"title": "enums",
+				"path": "enums"
+			},
+			{
+				"title": "function",
+				"path": "functions"
+			},
+			{
+				"title": "generics",
+				"path": "generics"
 			}
 		]
 	},
