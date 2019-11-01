@@ -41,7 +41,7 @@
     "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "mongodb": "^3.2.3",
-    "mongoose": "^5.5.4",
+    "mongoose": "^5.7.5",
     "name-styles": "^2.0.1",
     "node-notifier": "^5.4.0",
     "portfinder": "^1.0.23",
