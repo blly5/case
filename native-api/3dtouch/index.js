@@ -3,24 +3,21 @@
  * @Date: 2019-04-26 20:03:49
  */
 
-    let body = document.querySelector('body');
+ //可以依据3dTouch压力的,来获取物品重量
 
-    function touchLog( val ) {
-        document.querySelector('body').innerHTML = '';
-        let el = document.createElement('span');
-        el.innerText = val;
-        document.body.append( el );
-    }
+let body = document.querySelector('body');
 
-    function forEach( arr, callback ) {
-        console.log(arr);
-        return Array.prototype.forEach.call(arr, callback);
-        return forEach( callback );
-    };
-    
-    console.log('done');
+function onTouchStartMove(e) {
+    e.preventDefault();
+    checkForce(e);
+};
+function onTouchEnd(e) {
+    e.preventDefault();
+};
+function checkForce(e) {
+    document.querySelector('#value').innerHTML = e.touches[0].force;
+};
 
-    body.addEventListener('touchstart', (e) => {
-       let touchs = e.targetTouches;
-       touchLog(touchs[0].force);
-    })
+body.addEventListener('touchstart', onTouchStartMove, false);
+body.addEventListener('touchmove', onTouchStartMove, false);
+body.addEventListener('touchend', onTouchEnd, false);
