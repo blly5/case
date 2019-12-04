@@ -3,5 +3,5 @@
 
 ----------
 
-### [引导](https://l1yuu.github.io/course/)
+### [Guide](https://l1yuu.github.io/course/)
 
