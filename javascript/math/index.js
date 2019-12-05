@@ -2,18 +2,22 @@
  * @Author: Blue 
  * @Date: 2019-12-05 14:03:17 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-12-05 15:07:31
+ * @Last Modified time: 2019-12-05 15:28:31
  */
 
  //Math 不是一个构造函数
  
 console.group('ceil');
 console.log(1.1, Math.ceil(1.1));
+console.log(-1.1, Math.ceil(-1.1));
+console.log(-2.9, Math.ceil(-2.9));
 //2 (大于或者等于给定数字的最小整数)
 console.groupEnd('ceil')
 
 console.group('floor');
 console.log('与ceil相反', 1.1, Math.floor(1.1));
+console.log(-1.1, Math.floor(-1.1));
+console.log(-2.9, Math.floor(-2.9));
 console.groupEnd('floor');
 
 console.group('max');
@@ -33,9 +37,22 @@ console.log(5.1, Math.round(5.1));
 console.log(5.4, Math.round(5.4));
 console.groupEnd('round');
 
+console.group('trunc');
+console.log(1.1, Math.trunc(1.1)); //1
+console.log(-2.9, Math.trunc(-2.9)); //-2
+console.groupEnd('trunc');
+
 console.group('random');
 console.log('random', Math.random());
 console.groupEnd('random');
+
+console.group('sign');
+console.log(3, Math.sign(3)); //1
+console.log(10, Math.sign(10)); //1
+console.log(-3, Math.sign(-3)); //-1
+console.log(0, Math.sign(0)); //0
+console.groupEnd('sign');
+
 
 console.group('pow');
 console.log('2,2',Math.pow(2, 2));
