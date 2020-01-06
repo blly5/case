@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-09-10 14:56:33 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-09-11 16:17:51
+ * @Last Modified time: 2020-01-06 17:20:16
  */
 
 let arr1 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];
@@ -81,5 +81,15 @@ console.groupEnd();
 
 let arr11 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];
 
+console.group('from');
+let arr11 = {
+  0: '叶惠美',
+  1: '魔术先生',
+  2: '十一月的肖邦',
+  3: '我爱夏天',
+  length: 2
+};
+console.log(arr11, Array.from(arr11));
+console.groupEnd();
 
 console.log('------special------');
