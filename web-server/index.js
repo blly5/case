@@ -2,17 +2,14 @@
  * @Author: Blue 
  * @Date: 2019-07-10 15:06:11 
  * @Last Modified by: Blue
- * @Last Modified time: 2019-12-05 11:28:35
+ * @Last Modified time: 2020-03-20 18:03:39
  */
 
 const express = require('express');
-const path = require('path');
 const chalk = require('chalk');
-const execa = require('execa');
 const process = require('process');
 const portFinder = require('portfinder');
 const app = express();
-const upload = require('./upload');
 
 let defalutPort;
 async function checkNetWorkPort() {
@@ -28,9 +25,10 @@ const headerOption = function (res, path, stat) {
 
 let staticPath = JSON.parse(process.env.npm_config_argv).remain[0] ? JSON.parse(process.env.npm_config_argv).remain[0] : './';
 
-checkNetWorkPort().then(function () {
+checkNetWorkPort().then(async function () {
   app.use('/', express.static(staticPath, { setHeaders: headerOption }));
   app.listen(defalutPort);
+  console.clear();
   console.log(chalk['green'](`\n  http://127.0.0.1:${defalutPort} / path:${staticPath} \n`));
 })
   .catch(e => {
