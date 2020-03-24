@@ -9,14 +9,18 @@
 </head>
 <body>
     
-    <div>点击编辑点击编辑点击编辑点击编辑点击编辑点击编辑点击编辑点击编辑</div>
+    <style editable>
+        body {
+            background: gray;
+        }
+    </style>
     <br/>
     <button>Edit</button>
 
     <script type="module">
         import editContent from './index.js';
 
-        let editHTML = new editContent( document.querySelector('div') );
+        let editHTML = new editContent( document.querySelector('style') );
 
         document.querySelector('button').addEventListener( 'click', function() {
             editHTML.set();
