@@ -7,18 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  hello
-  <button class="send">send</button>
-  <script>
-    document.querySelector('.send').addEventListener('click', function() {
-      let myNotification = new Notification('标题', {
-  body: '通知正文内容'
-  })
-
-  myNotification.onclick = () => {
-    console.log('通知被点击')
-  }
-    })
-  </script>
+  <webview src="http://www.baidu.com" style="display:inline-flex; width:640px; height:480px"></webview>
 </body>
 </html>
