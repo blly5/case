@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2020-05-06 16:08:16 
  * @Last Modified by: Blue
- * @Last Modified time: 2020-05-06 16:57:28
+ * @Last Modified time: 2020-05-06 16:50:47
  */
 
 const express = require('express');
@@ -16,7 +16,6 @@ app.post('/', multipartMiddleware, (req, res, next) => {
   let file = req.files.file;
   fs.readFile(file.path, function (err, data) {
     fs.writeFile(__dirname + '/' + file.name, data, err => { });
-    res.end(data);
   })
 })
 
