@@ -7,16 +7,17 @@
     <title>ScriptError</title>
 </head>
 <body>
-    <script crossorigin="anonymous" src="./js/error.js"></script>
-
     <script style="display:block;">
-        window.addEventListener('error', a => {
-            console.log( a.message );
-        })
         function foo() {
-            logError();
+            throw Error('test!');
         };
+        
+        window.addEventListener('error', res => {
+            console.log( res.message );
+        });
+
         foo();
+        
     </script>
 </body>
 </html>
