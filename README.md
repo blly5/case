@@ -1,5 +1,5 @@
 
-<h1> Course ✨✨ </h1>
+<h1>frontend-course-list</h1>
 
 ### [Home](https://l1yuu.github.io/course/)
 
@@ -17,6 +17,5 @@
   - [Array](https://l1yuu.github.io/course/javascript/array/) Array
   - [Constructor&Instanceof](https://l1yuu.github.io/course/javascript/constructor-and-instanceof/) Constructor&Instanceof
   - ES6
-
   
   ...

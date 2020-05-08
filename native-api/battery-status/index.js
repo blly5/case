@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2020-05-08 15:52:21 
  * @Last Modified by: Blue
- * @Last Modified time: 2020-05-08 16:28:22
+ * @Last Modified time: 2020-05-08 16:30:14
  */
 
 
@@ -32,8 +32,6 @@ if (navigator.getBattery) {
     status.addEventListener('levelchange', function () {
       log('level: ', status.level * 100 + '%');
     })
-
-
   })
 } else {
   log('not support')
