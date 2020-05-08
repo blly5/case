@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2020-05-08 15:52:21 
  * @Last Modified by: Blue
- * @Last Modified time: 2020-05-08 16:21:24
+ * @Last Modified time: 2020-05-08 16:28:22
  */
 
 
@@ -36,5 +36,5 @@ if (navigator.getBattery) {
 
   })
 } else {
-  log.append('not support')
+  log('not support')
 }
