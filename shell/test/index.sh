@@ -4,5 +4,5 @@ if [ "$1" == "$2" ]
 then
   echo "success"
 else
-  echo "please input parameter"
+  echo "Please input arguments"
 fi
