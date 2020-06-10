@@ -1,19 +1,19 @@
 
 ## frontendCourseList
 
-- Algorithm
+- algorithm
   - Array
     - [InsertSoft](https://l1yuu.github.io/frontend-course-list/algorithm/array/insert-soft/) 
-- Desktop
+- desktop
   - Index
-- framWork
+- framwork
   - [async](https://l1yuu.github.io/frontend-course-list/framWork/async/)
   - [html2canvas](https://l1yuu.github.io/frontend-course-list/framWork/html2canvas/)
   - [rollup](https://l1yuu.github.io/frontend-course-list/framWork/rollup/)
   - [vue](https://l1yuu.github.io/frontend-course-list/framWork/vue/)
 - HTML
   - [contenteditable](https://l1yuu.github.io/frontend-course-list/html/contenteditable/)
-- JavaScript
+- javaScript
   - [Array](https://l1yuu.github.io/frontend-course-list/javascript/array/)
   - [constructor&instanceof](https://l1yuu.github.io/frontend-course-list/javascript/constructor-and-instanceof/)
   - es6
