@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/reset.css" />
+    <title>postMessage</title>
+  </head>
+  <body>
+    <iframe
+      style="border: 1px solid gray;"
+      id="inner"
+      src="./example.html"
+    ></iframe>
+    <div>
+      template 1
+      <textarea id="template1" placeholder="send message"></textarea>
+      <button onclick="postMsg()">send</button>
+    </div>
+    <div>
+      template 2
+      <button class="openWindow">openNew</button>
+      <div class="log"></div>
+    </div>
+  </body>
+  <script>
+    function post(message) {
+      document.querySelector("#inner").contentWindow.postMessage(message, "*");
+    }
+    function postMsg() {
+      this.post(document.querySelector("#template1").value);
+    }
+    // 
+    document.querySelector(".openWindow").addEventListener("click", () => {
+      let target = window.open("./example2.html");
+      setTimeout(() => {
+        target.postMessage('open', '*');
+      }, 100);
+    });
+    window.addEventListener("message", event => {
+      document.querySelector('.log').append(`${event.data}/`)
+    });
+  </script>
+</html>
