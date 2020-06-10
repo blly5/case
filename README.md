@@ -26,6 +26,7 @@
   - file
     - [blob](https://l1yuu.github.io/frontend-course-list/javascript/file/blob)
     - [buffer](https://l1yuu.github.io/frontend-course-list/javascript/file/buffer)
+    - [base64](https://l1yuu.github.io/frontend-course-list/javascript/file/base64)
   - [math](https://l1yuu.github.io/frontend-course-list/javascript/math)
   - mode
     - [decorator](https://l1yuu.github.io/frontend-course-list/javascript/mode/decorator)
