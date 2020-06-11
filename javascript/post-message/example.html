@@ -8,11 +8,7 @@
 <body>
   <script>
     window.addEventListener('message', function(event) {
-      if(event.origin === 'http://localhost:5000') {
-        document.body.innerHTML = event.data;
-      } else {
-        console.info('请求异常');
-      }
+      document.body.innerHTML = event.data;
     }, false)
 
   </script>
