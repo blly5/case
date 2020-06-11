@@ -33,7 +33,7 @@
     - [decorator](https://l1yuu.github.io/frontend-course-list/javascript/mode/decorator)
   - [module](https://l1yuu.github.io/frontend-course-list/javascript/module)
   - [performance](https://l1yuu.github.io/frontend-course-list/javascript/performance)
-  - [postMessage](https://l1yuu.github.io/frontend-course-list/javascript/postMessage)
+  - [postMessage](https://l1yuu.github.io/frontend-course-list/javascript/post-message)
   - [regexp](https://l1yuu.github.io/frontend-course-list/javascript/regexp)
 
 - layout
