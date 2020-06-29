@@ -15,7 +15,7 @@
 - javaScript
   - [Array](https://l1yuu.github.io/frontend-course-list/javascript/array/)
   - [constructor&instanceof](https://l1yuu.github.io/frontend-course-list/javascript/constructor-and-instanceof/)
-  - [Vue-Computed](https://l1yuu.github.io/frontend-course-list/javascript/vue-computed/)
+  - [vueComputed](https://l1yuu.github.io/frontend-course-list/javascript/vue-computed/)
   - es6
     - [defineProperty](https://l1yuu.github.io/frontend-course-list/javascript/es6/defineProperty)
     - [extend](https://l1yuu.github.io/frontend-course-list/javascript/es6/extend)
