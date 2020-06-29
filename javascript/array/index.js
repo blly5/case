@@ -2,7 +2,7 @@
  * @Author: Blue 
  * @Date: 2019-09-10 14:56:33 
  * @Last Modified by: Blue
- * @Last Modified time: 2020-01-06 17:20:16
+ * @Last Modified time: 2020-06-11 11:20:06
  */
 
 let arr1 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];
@@ -20,19 +20,19 @@ console.log(arr2_res);
 console.groupEnd();
 
 let arr3 = ['三年二班', '叶惠美', '十一月肖邦', ['倒带'], '我爱夏天', '阳光宅男'];
-let arr3_1 = ['三年二班', '叶惠美', '十一月肖邦',[{
+let arr3_1 = ['三年二班', '叶惠美', '十一月肖邦', [{
   name: '倒带'
 }, {
   name: '我爱夏天'
 }], [
-  {
-  name: '倒带',
-  name: '阳光宅男'
-  },
-  [
-    '无双'
-  ]
-]];
+    {
+      name: '倒带',
+      name: '阳光宅男'
+    },
+    [
+      '无双'
+    ]
+  ]];
 
 console.group('flat');
 console.log(arr3.flat(Infinity));
@@ -43,7 +43,7 @@ console.groupEnd();
 let arr4 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];
 
 console.group('every');
-console.log(arr4.every(item => typeof(item) === 'string'));
+console.log(arr4.every(item => typeof (item) === 'string'));
 console.groupEnd();
 
 
@@ -59,7 +59,7 @@ console.groupEnd();
 
 let arr7 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];
 console.group('fill');
-console.log(arr7.fill('Try',0, Infinity));
+console.log(arr7.fill('Try', 0, Infinity));
 console.groupEnd();
 
 let arr8 = ['三年二班', '叶惠美', '十一月肖邦', '倒带', '我爱夏天', '阳光宅男'];

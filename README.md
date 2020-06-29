@@ -4,8 +4,7 @@
 - algorithm
   - Array
     - [InsertSoft](https://l1yuu.github.io/frontend-course-list/algorithm/array/insert-soft/) 
-- desktop
-  - Index
+- [desktop](https://l1yuu.github.io/frontend-course-list/typescript/desktop)
 - framwork
   - [async](https://l1yuu.github.io/frontend-course-list/framWork/async/)
   - [html2canvas](https://l1yuu.github.io/frontend-course-list/framWork/html2canvas/)
@@ -16,6 +15,7 @@
 - javaScript
   - [Array](https://l1yuu.github.io/frontend-course-list/javascript/array/)
   - [constructor&instanceof](https://l1yuu.github.io/frontend-course-list/javascript/constructor-and-instanceof/)
+  - [Vue-Computed](https://l1yuu.github.io/frontend-course-list/javascript/vue-computed/)
   - es6
     - [defineProperty](https://l1yuu.github.io/frontend-course-list/javascript/es6/defineProperty)
     - [extend](https://l1yuu.github.io/frontend-course-list/javascript/es6/extend)
@@ -24,8 +24,6 @@
     - [reduceright](https://l1yuu.github.io/frontend-course-list/javascript/es6/reduceright)
   - [fetch](https://l1yuu.github.io/frontend-course-list/javascript/fetch)
   - file
-    - [blob](https://l1yuu.github.io/frontend-course-list/javascript/file/blob)
-    - [buffer](https://l1yuu.github.io/frontend-course-list/javascript/file/buffer)
     - [base64](https://l1yuu.github.io/frontend-course-list/javascript/file/base64)
     - [objectURL](https://l1yuu.github.io/frontend-course-list/javascript/file/objectURL)
   - [math](https://l1yuu.github.io/frontend-course-list/javascript/math)
@@ -35,7 +33,7 @@
   - [performance](https://l1yuu.github.io/frontend-course-list/javascript/performance)
   - [postMessage](https://l1yuu.github.io/frontend-course-list/javascript/post-message)
   - [regexp](https://l1yuu.github.io/frontend-course-list/javascript/regexp)
-
+  (https://l1yuu.github.io/frontend-course-list/javascript/symbol)
 - layout
   - [border0.5px](https://l1yuu.github.io/frontend-course-list/layout/border0.5)
   - [offsetScrollGuide](https://l1yuu.github.io/frontend-course-list/layout/offset-scroll-guide)
