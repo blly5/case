@@ -33,7 +33,7 @@
   - [performance](https://l1yuu.github.io/frontend-course-list/javascript/performance)
   - [postMessage](https://l1yuu.github.io/frontend-course-list/javascript/post-message)
   - [regexp](https://l1yuu.github.io/frontend-course-list/javascript/regexp)
-  (https://l1yuu.github.io/frontend-course-list/javascript/symbol)
+  - [clipboard](https://l1yuu.github.io/frontend-course-list/javascript/clipboard)
 - layout
   - [border0.5px](https://l1yuu.github.io/frontend-course-list/layout/border0.5)
   - [offsetScrollGuide](https://l1yuu.github.io/frontend-course-list/layout/offset-scroll-guide)
