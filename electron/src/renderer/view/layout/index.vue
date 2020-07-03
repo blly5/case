@@ -23,9 +23,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/css/reset';
 .layout {
-    font-family: Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif,
-    sans-serif;
   position: relative;
   .container {
     position: absolute;

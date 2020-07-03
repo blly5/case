@@ -4,7 +4,7 @@
 - algorithm
   - Array
     - [InsertSoft](https://l1yuu.github.io/frontend-course-list/algorithm/array/insert-soft/) 
-- [electron](https://l1yuu.github.io/frontend-course-list/typescript/electron)
+- [desktop  👉 releases 👈 ](https://github.com/l1Yuu/frontend-course-list/releases)
 - framwork
   - [async](https://l1yuu.github.io/frontend-course-list/framWork/async/)
   - [html2canvas](https://l1yuu.github.io/frontend-course-list/framWork/html2canvas/)
