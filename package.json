@@ -39,7 +39,7 @@
     "graphql": "^14.2.1",
     "json-format": "^1.0.1",
     "koa": "^2.7.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "mongodb": "^3.2.3",
     "mongoose": "^5.7.5",
