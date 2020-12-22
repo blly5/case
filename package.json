@@ -44,7 +44,7 @@
     "mongodb": "^3.2.3",
     "mongoose": "^5.7.5",
     "name-styles": "^2.0.1",
-    "node-notifier": "^5.4.0",
+    "node-notifier": "^8.0.1",
     "portfinder": "^1.0.23",
     "readline2": "^1.0.1",
     "request": "^2.88.0",
