@@ -9,7 +9,10 @@
 </template>
 
 <script setup>
+
 import { ref, defineComponent, onMounted } from "vue";
+import caseMenu from '../components/caseMenu.vue';
+
 const props = defineProps({
   data: Array
 });

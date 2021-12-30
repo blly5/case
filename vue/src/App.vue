@@ -1,23 +1,10 @@
 
 <template>
-  <tree :data="treeData" />
+  <router-view />
 </template>
 
 <script setup lang="ts">
-  import { ref, watch } from "Vue";
-  import tree from './components/tree.vue'; 
-  const treeData = ref([
-    {
-      label: 'small',
-    }
-  ]);
-
-  watch(treeData, (val) => {
-    console.log(val);
-  })
-
-
-
+  
 </script>
 
 <style>
