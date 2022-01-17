@@ -1,8 +1,8 @@
 <template>
-  <menu />
+  <Menu />
   <router-view />
 </template>
 
 <script setup lang="ts">
-  import menu from './menu/menu.vue';
+  import Menu from './menu/menu.vue'
 </script>
