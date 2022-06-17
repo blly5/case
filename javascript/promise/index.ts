@@ -5,7 +5,7 @@ class myPromise {
   onRejectedCallback: null | Function;
 
   constructor(execute) {
-    this.state = 'pendding';
+    this.state = "pendding";
     this.value = null;
     this.onResolvedCallback = null;
     this.onRejectedCallback = null;
@@ -15,7 +15,7 @@ class myPromise {
   resolve = (result) => {
     this.state = "resolved";
     this.value = result;
-    
+
     this.onResolvedCallback && this.onResolvedCallback(this.value);
   };
   reject = (result) => {
@@ -24,25 +24,66 @@ class myPromise {
     this.onRejectedCallback && this.onRejectedCallback(this.value);
   };
 
-
   then = (resolvedCallback, rejectedCallback) => {
-    if(this.state === "resolved") {
+    if (this.state === "resolved") {
       resolvedCallback(this.value);
     }
-    if(this.state === "rejected") {
+    if (this.state === "rejected") {
       rejectedCallback(this.value);
     }
-    if(this.state === 'pendding') {
+    if (this.state === "pendding") {
       this.onResolvedCallback = resolvedCallback;
       this.onRejectedCallback = rejectedCallback;
     }
-  }
+  };
 }
+
+myPromise.all = (promises) => {
+  let results = [];
+  let executeCount = 0;
+
+  return new myPromise((resolve, reject) => {
+    promises.forEach((promise, index) => {
+      promise.then(
+        (res) => {
+          results.push(res);
+          executeCount++;
+        },
+        (res) => {
+          results.push(res);
+        }
+      );
+
+      let complete = promises.length === index + 1;
+      if (!complete) {
+        return false;
+      }
+      if (promises.length === executeCount) {
+        resolve(results);
+      } else {
+        reject(results);
+      }
+    });
+  });
+};
+
 
 let p1 = new myPromise((resolve, reject) => {
   setTimeout(() => {
-    resolve('333')
+    resolve("promise1");
   }, 1000);
 });
-p1.then(res => console.log('1', res), res => console.log('2', res));
 
+p1.then(
+  (res) => console.log(res),
+  (res) => console.log(res)
+);
+
+
+let p2 = new myPromise((resolve, reject) => resolve("1"));
+let p3 = new myPromise((resolve, reject) => reject("2"));
+
+myPromise.all([p2, p3]).then(
+  (res) => console.log(res),
+  (res) => console.log(res)
+);

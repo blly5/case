@@ -18,12 +18,12 @@ var myPromise = /** @class */ (function () {
             if (_this.state === "rejected") {
                 rejectedCallback(_this.value);
             }
-            if (_this.state === 'pendding') {
+            if (_this.state === "pendding") {
                 _this.onResolvedCallback = resolvedCallback;
                 _this.onRejectedCallback = rejectedCallback;
             }
         };
-        this.state = 'pendding';
+        this.state = "pendding";
         this.value = null;
         this.onResolvedCallback = null;
         this.onRejectedCallback = null;
@@ -31,9 +31,36 @@ var myPromise = /** @class */ (function () {
     }
     return myPromise;
 }());
+myPromise.all = function (promises) {
+    var results = [];
+    var executeCount = 0;
+    return new myPromise(function (resolve, reject) {
+        promises.forEach(function (promise, index) {
+            promise.then(function (res) {
+                results.push(res);
+                executeCount++;
+            }, function (res) {
+                results.push(res);
+            });
+            var complete = promises.length === index + 1;
+            if (!complete) {
+                return false;
+            }
+            if (promises.length === executeCount) {
+                resolve(results);
+            }
+            else {
+                reject(results);
+            }
+        });
+    });
+};
 var p1 = new myPromise(function (resolve, reject) {
     setTimeout(function () {
-        resolve('333');
+        resolve("promise1");
     }, 1000);
 });
-p1.then(function (res) { return console.log('1', res); }, function (res) { return console.log('2', res); });
+p1.then(function (res) { return console.log(res); }, function (res) { return console.log(res); });
+var p2 = new myPromise(function (resolve, reject) { return resolve("1"); });
+var p3 = new myPromise(function (resolve, reject) { return reject("2"); });
+myPromise.all([p2, p3]).then(function (res) { return console.log(res); }, function (res) { return console.log(res); });
