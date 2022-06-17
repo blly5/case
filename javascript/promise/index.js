@@ -1,23 +1,39 @@
 var myPromise = /** @class */ (function () {
     function myPromise(execute) {
         var _this = this;
-        this.state = null;
-        this.value = null;
-        var resolve = function (result) {
+        this.resolve = function (result) {
             _this.state = "resolved";
             _this.value = result;
+            _this.onResolvedCallback && _this.onResolvedCallback(_this.value);
         };
-        var reject = function (result) {
+        this.reject = function (result) {
             _this.state = "rejected";
             _this.value = result;
+            _this.onRejectedCallback && _this.onRejectedCallback(_this.value);
         };
-        execute(resolve, reject);
+        this.then = function (resolvedCallback, rejectedCallback) {
+            if (_this.state === "resolved") {
+                resolvedCallback(_this.value);
+            }
+            if (_this.state === "rejected") {
+                rejectedCallback(_this.value);
+            }
+            if (_this.state === 'pendding') {
+                _this.onResolvedCallback = resolvedCallback;
+                _this.onRejectedCallback = rejectedCallback;
+            }
+        };
+        this.state = 'pendding';
+        this.value = null;
+        this.onResolvedCallback = null;
+        this.onRejectedCallback = null;
+        execute(this.resolve, this.reject);
     }
-    myPromise.prototype.then = function (resolvedCallback, rejectedCallback) {
-        this.state === "resolved" && resolvedCallback(this.value);
-        this.state === "rejected" && rejectedCallback(this.value);
-    };
     return myPromise;
 }());
-var p1 = new myPromise(function (resolve, reject) { return resolve('done'); });
-p1.then(function (msg) { return console.log(msg); }, function () { });
+var p1 = new myPromise(function (resolve, reject) {
+    setTimeout(function () {
+        resolve('333');
+    }, 1000);
+});
+p1.then(function (res) { return console.log('1', res); }, function (res) { return console.log('2', res); });
