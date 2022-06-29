@@ -3,11 +3,11 @@
   <router-view />
 </template>
 
-<script setup lang="ts">
-  
+<script>
+import'./assets/reset.css';
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

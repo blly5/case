@@ -1,8 +1,17 @@
 <template>
-  <Menu />
-  <router-view />
+  <div>
+  </div>
 </template>
+<script lang="ts">
+import { defineComponent, onMounted } from 'vue';
+import Tree from './components/Tree.vue';
 
-<script setup lang="ts">
-  import Menu from './menu/menu.vue'
+export default defineComponent({
+  setup() {
+    onMounted(function() {
+      console.log(this);
+    })
+  }
+})
+
 </script>
