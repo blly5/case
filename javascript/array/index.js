@@ -93,3 +93,15 @@ console.log(arr11, Array.from(arr11));
 console.groupEnd();
 
 console.log('------special------');
+
+
+
+function t(time, callback) {
+  this.flag = false;
+  if(this.flag) return;
+  setTimeout(() => {
+    callback();
+    this.flag = true;
+  }, time);
+}
+
