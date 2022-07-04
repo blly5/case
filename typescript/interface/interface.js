@@ -4,32 +4,21 @@
  * @Last Modified by: Blue
  * @Last Modified time: 2019-07-02 10:21:12
  */
-
-interface fruit {
-  readonly category: string;
-  name: string;
-  weight: number;
-  sale: boolean;
-}
-
-class createFruit {
-    constructor(config: fruit) {
+var createFruit = /** @class */ (function () {
+    function createFruit(config) {
         return config;
     }
-}
-let data = {
+    return createFruit;
+}());
+var data = {
     category: "Aisa",
     name: "watermelon",
     weight: 1.5,
-    sale: true,
-  };
-let myFruit = new createFruit(data);
-
+    sale: true
+};
+var myFruit = new createFruit(data);
 console.log(myFruit);
-
-
 // let fruit = {
 //   category: "Aisa",
 // };
-
 // console.log(fruit);

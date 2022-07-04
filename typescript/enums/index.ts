@@ -37,4 +37,14 @@ enum Color32 { sky = 'blue', land = 0, glaxy, spark };
 enum Color33 { sky, land = 1*5, glaxy = 1<<3 };
 
 
-console.log(Color32);
+// console.log(Color32);
+
+let fruits:string = 'apple';
+let number:number = 10;
+
+enum pakage { fruits = '12', dd = 33 };
+console.log(pakage.fruits);
+
+
+enum weight { apple = '250g', banana = '100g' };
+console.log(weight);

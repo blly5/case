@@ -7,6 +7,11 @@ const router = createRouter({
       name: 'recursionComponent',
       component: () => import('../views/recursionComponent/index.vue')
     },
+    {
+      path: '/dialog',
+      name: 'dialog',
+      component: () => import('../views/dialog/index.vue')
+    },
   ],
 });
 
