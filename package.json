@@ -40,7 +40,7 @@
     "json-format": "^1.0.1",
     "koa": "^2.7.0",
     "lodash": "^4.17.13",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongodb": "^3.2.3",
     "mongoose": "^5.7.5",
     "name-styles": "^2.0.1",
