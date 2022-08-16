@@ -4,19 +4,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var run = /** @class */ (function () {
-    function run() {
-    }
-    run.prototype.a = function () {
-        console.log(this);
+function testable(isTestable) {
+    return function (target) {
+        target.isTestable = isTestable;
     };
-    run = __decorate([
-        testDecorator
-    ], run);
-    return run;
-}());
-;
-console.log(run);
-function testDecorator(target) {
-    target.is = true;
 }
+var MyTestableClass = /** @class */ (function () {
+    function MyTestableClass() {
+    }
+    MyTestableClass = __decorate([
+        testable(true)
+    ], MyTestableClass);
+    return MyTestableClass;
+}());
+MyTestableClass.isTestable; // true

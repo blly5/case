@@ -12,6 +12,11 @@ const router = createRouter({
       name: 'dialog',
       component: () => import('../views/dialog/index.vue')
     },
+    {
+      path: '/spaceComponent',
+      name: 'spaceComponent',
+      component: () => import('../views/spaceComponent/index.vue')
+    },
   ],
 });
 
