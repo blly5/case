@@ -1,5 +1,5 @@
 
-## [frontendCase 🏡](https://blly5.github.io/case/)
+## [FrontendCase 🏡](https://blly5.github.io/case/)
 
 - Algorithm
   - Array
