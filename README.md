@@ -69,18 +69,18 @@
   - [Function](https://github.com/blly5/case/blob/master/shell/function/index.sh)
   - [Hello](https://github.com/blly5/case/blob/master/shell/hello/index.sh)
   - [Loop](https://github.com/blly5/case/tree/master/shell/loop)
-  - [test](https://github.com/blly5/case/blob/master/shell/test/index.sh)
+  - [Test](https://github.com/blly5/case/blob/master/shell/test/index.sh)
 
 - TypeScript
   - [BasicTypes](https://github.com/blly5/case/tree/master/typescript/basic-types)
   - [Decorator](https://github.com/blly5/case/tree/master/typescript/decorator)
-  - [enums](https://github.com/blly5/case/tree/master/typescript/enums)
-  - [function](https://github.com/blly5/case/tree/master/typescript/function)
-  - [generics](https://github.com/blly5/case/tree/master/typescript/generics)
-  - [interface](https://github.com/blly5/case/tree/master/typescript/interface)
-  - [module](https://github.com/blly5/case/tree/master/typescript/module)
-  - [nameSpace](https://github.com/blly5/case/tree/master/typescript/namespace)
-  - [variable](https://github.com/blly5/case/tree/master/typescript/variable)
+  - [Enums](https://github.com/blly5/case/tree/master/typescript/enums)
+  - [Function](https://github.com/blly5/case/tree/master/typescript/function)
+  - [Generics](https://github.com/blly5/case/tree/master/typescript/generics)
+  - [Interface](https://github.com/blly5/case/tree/master/typescript/interface)
+  - [Module](https://github.com/blly5/case/tree/master/typescript/module)
+  - [NameSpace](https://github.com/blly5/case/tree/master/typescript/namespace)
+  - [Variable](https://github.com/blly5/case/tree/master/typescript/variable)
 
 - [webAssembly](https://github.com/blly5/case/tree/master/webAssembly)
 
