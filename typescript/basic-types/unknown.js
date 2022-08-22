@@ -1,6 +1,7 @@
-var uncertain = 4;
-uncertain = 'mango';
-// any&unknown diff
-var uncertaionAny = { mango: 2 };
-var uncertaionUnknown = { mango: 2 };
-console.log(uncertaionAny.apple);
+"use strict";
+exports.__esModule = true;
+exports.apple = void 0;
+exports.apple = 4;
+exports.apple = "im string";
+exports.apple = false;
+console.log(exports.apple);

@@ -1,11 +1,8 @@
 
-let uncertain:unknown = 4;
-uncertain = 'mango';
+export let apple: unknown = 4;
 
-// any&unknown diff
+apple = "im string";
 
+apple = false;
 
-let uncertaionAny:any = { mango: 2 };
-let uncertaionUnknown:unknown = { mango: 2 };
-
-console.log(uncertaionAny.apple)
+console.log(apple);
