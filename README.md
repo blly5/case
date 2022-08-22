@@ -30,7 +30,6 @@
     - [DefineProperty](https://blly5.github.io/case/javascript/es6/defineProperty/)
     - [Extend](https://blly5.github.io/case/javascript/es6/extends/)
     - [Generator](https://blly5.github.io/case/javascript/es6/generator/)
-    - [Module TODO](https://github.com/blly5/case/tree/master/javascript/es6/module)
     - [Proto](https://blly5.github.io/case/javascript/es6/prototype/)
     - [Reduceright](https://blly5.github.io/case/javascript/es6/reduceright/)
     - [Module](https://blly5.github.io/case/javascript/module/)
@@ -44,7 +43,7 @@
 
   - Vue
     - [RecursionComponent](https://github.com/blly5/case/tree/master/vue/src/views/recursionComponent)
-    - [SpaceCompnent]()
+    - [nameSpaceComponent](https://github.com/blly5/case/tree/master/vue/src/views/nameSpaceComponent)
 
 - Layout
   - [Border0.5px](https://blly5.github.io/case/layout/border0.5/)
