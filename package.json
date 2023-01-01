@@ -54,7 +54,7 @@
     "type-fest": "^0.6.0",
     "typescript": "^3.4.5",
     "uuid": "^3.3.2",
-    "webpack": "^4.30.0"
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
     "@types/node": "^11.13.8"
